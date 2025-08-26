@@ -43,7 +43,7 @@
   <div class="card">
     <h1>💍 Thiệp Cưới 💍</h1>
     <p>Kính mời bạn đến dự lễ cưới của</p>
-    <div class="names">Nguyễn Văn A & Trần Thị B</div>
+    <div class="names">Đức thắng & Minh Tuấn</div>
     <p class="date">Vào lúc 10h00, ngày 15/09/2025</p>
     <p>Tại: Nhà hàng Hồng Phúc</p>
     <p>Rất hân hạnh được đón tiếp! 🎉</p>
