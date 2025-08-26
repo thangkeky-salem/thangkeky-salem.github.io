@@ -1,120 +1,249 @@
 # thangkeky-salem.github.io
-wedding-website/
-│
-├── index.html
-├── css/
-│   ├── style.css
-│   ├── pink.css
-│   └── responsive.css
-├── js/
-│   ├── main.js
-│   └── scrollIt.min.js
-├── images/
-│   ├── anh1.jpg
-│   ├── chure.jpg
-│   ├── codau.jpg
-│   ├── ...
-├── audio/
-│   └── Maimaibennhau-NooPhuocThinh.mp3
-└── README.md
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wedding Invitation</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/pink.css">
-  <link rel="stylesheet" href="css/responsive.css">
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- JS -->
-  <script src="js/main.js" defer></script>
-
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&amp;A</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/pink.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo"><a href="index.html">HA</a></div>
-    <nav class="nav">
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#couple">Cô dâu & Chú rể</a></li>
-        <li><a href="#event">Sự kiện</a></li>
-        <li><a href="#gallery">Album ảnh cưới</a></li>
-        <li><a href="#rsvp">Tham gia</a></li>
-        <li><a href="#gifts">Mừng cưới</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!--header start-->
+        <header class="header">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="logo">
+                        <a href="index.html">HA</a>
+                    </div>
+                    <div class="hamburger-btn">
+                        <span></span>
+                    </div>
+                    <div class="nav">
+                        <ul>
+                            <li><a data-scroll-nav="0" href="#" class="active">Home</a></li>
+                            <li><a data-scroll-nav="1" href="#" class="">Thông tin</a></li>
+                            <li><a data-scroll-nav="2" href="#" class="">Sự kiện</a></li>
+                            <li><a data-scroll-nav="3" href="#" class="">Album ảnh cưới</a></li>
+                            <li><a data-scroll-nav="4" href="#" class="">Tham gia sự kiện</a></li>
+                            <li><a data-scroll-nav="5" href="#">Mừng cưới</a></li>
+                        </ul>
+                    </div>
 
-  <!-- Home -->
-  <section id="home">
-    <h1>Nguyễn Hữu Hậu & Tạ Dương Ánh</h1>
-    <p>Ngày 18/09/2024</p>
-  </section>
+                </div>
+            </div>
+        </header>
+        <!--header end-->
 
-  <!-- Couple -->
-  <section id="couple">
-    <h2>Cô dâu & Chú rể</h2>
-    <!-- Thêm ảnh và thông tin -->
-  </section>
+        <!-- home section start-->
+         <section class="home-section" data-scroll-index="0">
+            <!--slide start-->
+            <div class="slide active" style="background-image: url('images/anh6.jpg');">
+                <div class="container">
+                <div class="row align-items-center">
+                    <div class="home-content">
+                        <p> Welcome to our wedding</p>
+                        <h1>Hữu Hậu &amp; Dương Ánh</h1>
+                        <span>18/09/2024</span>
+                        <h2>Sự hiện diện của quý vị là niềm vinh dự của gia đình chúng tôi</h2>
+                    </div>
+                </div>
+                </div>
+            </div>
+<!--slide end-->
+         </section>
 
-  <!-- Event -->
-  <section id="event">
-    <h2>Sự kiện</h2>
-    <!-- Thông tin sự kiện -->
-  </section>
+         <!-- home section end-->
+          
+<!--couple section start-->
+<section class="couple-section" data-scroll-index="1">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>Cô dâu &amp; Chú rể</h2>
+            </div>
+        <div class="row">
+            <div class="couple">
+                <img src="images/codau.jpg" alt="Cô dâu và chú rể">
+                <h3>Tạ Dương Ánh</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100079853800534" title="facebook">
+                        <i class="bi-facebook"></i>
+                    </a>
+                </div>
+                <p>Bác: Tạ Hữu Khởi
+                    <br>
+                    Bác: Tạ Thị Chiến
+                </p>
+                <i class="bi-geo-alt-fill"> Tư gia nhà gái:  Thôn Đông Thịnh, xã Ninh An, huyện Hoa Lư, tỉnh Ninh Bình</i> 
+            </div>
+            <div class="couple">
+                <i class="bi-heart-fill"></i>
+                <img src="images/chure.jpg" alt="Cô dâu và chú rể">
+                <h3>Nguyễn Hữu Hậu</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100037015563266" title="facebook">
+                        <i class="bi-facebook"></i>
+                    </a>
+                </div>
+                <p>Mẹ: Mai Thị Chuyên</p>
+                <br>
+                <i class="bi-geo-alt-fill">Tư gia nhà trai: TDP Tiền Phong, phường Hải Bình, Thị xã Nghi Sơn, Thanh Hoá.</i>
+            
+            </div>
+        </div>
+    </div>
+</div></section>
+<!--couple section end-->
 
-  <!-- Gallery -->
-  <section id="gallery">
-    <h2>Album ảnh cưới</h2>
-    <!-- Gallery -->
-  </section>
+<!--event section start-->
+<section class="event-section" data-scroll-index="2">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>Our Wedding</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <!--item start-->
+            <div class="event-item">
+                <div class="event-item-inner">
+                    <h3>LỄ VU QUY</h3>
+                    <span class="date"><i class="bi bi-calendar-heart"></i> Thứ Tư, 18/09/2024</span>
+                    <span class="date">(16/08/2024 âm lịch)</span>
+                    <spam class="time"><i class="bi bi-alarm"></i> 7:00 - 9:00</spam>
+                    <br>
+                    <i class="bi-geo-alt-fill"> Tư gia nhà gái</i>
+                    <p> Thôn Đông Thịnh, xã Ninh An, huyện Hoa Lư, tỉnh Ninh Bình</p>
+                    <a href="https://maps.app.goo.gl/S9gy1KVr1PfJ1GnSA?g_st=com.google.maps.preview.copy">
+                        <img src="images/bando01.png" alt="Hình ảnh bản đồ">
+                        <br>
+                        </a><a href="https://maps.app.goo.gl/S9gy1KVr1PfJ1GnSA?g_st=com.google.maps.preview.copy" target="_blank">
+                            Bấm để mở bản đồ
+                            </a>
+                    
+                    
+                    <i class="bi-calendar2-heart-fill"></i>
+                </div>
+            </div>
+            <!--item end-->
+             <!--item start-->
+             <div class="event-item">
+                <div class="event-item-inner">
+                    <h3>LỄ THÀNH HÔN</h3>
+                    <span class="date"><i class="bi bi-calendar-heart"></i> Thứ Tư, 18/09/2024</span>
+                    <span class="date">(16/08/2024 âm lịch)</span>
+                    <spam class="time"><i class="bi bi-alarm"></i> 10:30 - 15:00</spam>
+                    <br>
+                    <i class="bi-geo-alt-fill"> Trung tâm tổ chức sự kiện<br>Hot 123</i>
+                    <p>Phường Hải Bình, Thị xã Nghi Sơn, Thanh Hoá</p>
 
-  <!-- RSVP -->
-  <section id="rsvp">
-    <h2>Xác nhận tham dự</h2>
-    <form id="myForm">
-      <input type="text" name="fullname" placeholder="Họ và tên" required>
-      <input type="text" name="phone" placeholder="Số điện thoại" required>
-      <button type="submit">Gửi</button>
-    </form>
-    <div id="responseMessage"></div>
-  </section>
+                    <a href="https://www.google.com/maps/place/Trung+t%C3%A2m+t%E1%BB%95+ch%E1%BB%A9c+s%E1%BB%B1+ki%E1%BB%87n+Hot+123/@19.406282,105.7757443,17z/data=!3m1!4b1!4m6!3m5!1s0x3137090050e1b9af:0xb5a6d91b8b489e76!8m2!3d19.406282!4d105.7757443!16s%2Fg%2F11lf12nrfn?entry=ttu">
+                        <img src="images/bando.png" alt="Hình ảnh bản đồ">
+                        <br>
+                        </a><a href="https://www.google.com/maps/place/Trung+t%C3%A2m+t%E1%BB%95+ch%E1%BB%A9c+s%E1%BB%B1+ki%E1%BB%87n+Hot+123/@19.406282,105.7757443,17z/data=!3m1!4b1!4m6!3m5!1s0x3137090050e1b9af:0xb5a6d91b8b489e76!8m2!3d19.406282!4d105.7757443!16s%2Fg%2F11lf12nrfn?entry=ttu" target="_blank">
+                            Bấm để mở bản đồ
+                            </a>
+                    
+                    <i class="bi-calendar2-heart-fill"></i>
+                </div>
+            </div>
+            <!--item end-->
+        </div>
 
-  <!-- Gifts -->
-  <section id="gifts">
-    <h2>Mừng cưới</h2>
-    <p>Thông tin tài khoản ngân hàng, QR code...</p>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>©2024 Designed by Hau & Anh</p>
-  </footer>
 
-  <!-- Audio -->
-  <audio id="myAudio" loop src="audio/Maimaibennhau-NooPhuocThinh.mp3"></audio>
-  <i class="bi-music-note-beamed pause"></i>
-</body>
-</html>
-# Wedding Website 💒
 
-Website thiệp cưới online (HTML/CSS/JS).
+        <br>
+        <div class="row justify-content-center">
+            <!--item start-->
+            <div class="event-item">
+                <div class="event-item-inner">
+                    <h3>Tiệc cưới nhà gái</h3>
 
-## Cấu trúc
-- `index.html`: trang chính
-- `css/`: chứa file CSS
-- `js/`: chứa file JS
-- `images/`: chứa ảnh
-- `audio/`: nhạc nền
+                    <span class="date"><i class="bi bi-calendar-check"></i> Thứ Ba, 17/09/2024</span>  
+                    <span class="date">(15/08/2024 âm lịch)</span>
+                    <spam class="time"><i class="bi bi-alarm"></i> 17:30</spam>
+                    <br>
+                    <i class="bi-geo-alt-fill"> Tư gia nhà gái</i>
+                    <p> Thôn Đông Thịnh, xã Ninh An, huyện Hoa Lư, tỉnh Ninh Bình</p>
+                    <a href="https://maps.app.goo.gl/S9gy1KVr1PfJ1GnSA?g_st=com.google.maps.preview.copy">
+                        <img src="images/bando01.png" alt="Hình ảnh bản đồ">
+                        <br>
+                        </a><a href="https://maps.app.goo.gl/S9gy1KVr1PfJ1GnSA?g_st=com.google.maps.preview.copy" target="_blank">
+                            Bấm để mở bản đồ
+                            </a>
+                    
+                    
+                    <img src="images/dish.png" class="icon-eat">
+                </div>
+            </div>
+            <!--item end-->
+             <!--item start-->
+             <div class="event-item">
+                <div class="event-item-inner">
+                    <h3>Tiệc cưới nhà trai</h3>
+                    <span class="date"><i class="bi bi-calendar-check"></i> Thứ Tư, 18/09/2024</span>
+                    <span class="date">(16/08/2024 âm lịch)</span>
+                    <spam class="time"><i class="bi bi-alarm"></i> 10:30</spam>
+                    <br>
+                    <i class="bi-geo-alt-fill"> Trung tâm tổ chức sự kiện<br>Hot 123</i>
+                    <p>Phường Hải Bình, Thị xã Nghi Sơn, Thanh Hoá</p>
 
-## Cách chạy
-Chỉ cần mở file `index.html` trên trình duyệt.
+                    <a href="https://www.google.com/maps/place/Trung+t%C3%A2m+t%E1%BB%95+ch%E1%BB%A9c+s%E1%BB%B1+ki%E1%BB%87n+Hot+123/@19.406282,105.7757443,17z/data=!3m1!4b1!4m6!3m5!1s0x3137090050e1b9af:0xb5a6d91b8b489e76!8m2!3d19.406282!4d105.7757443!16s%2Fg%2F11lf12nrfn?entry=ttu">
+                        <img src="images/bando.png" alt="Hình ảnh bản đồ">
+                        <br>
+                        </a><a href="https://www.google.com/maps/place/Trung+t%C3%A2m+t%E1%BB%95+ch%E1%BB%A9c+s%E1%BB%B1+ki%E1%BB%87n+Hot+123/@19.406282,105.7757443,17z/data=!3m1!4b1!4m6!3m5!1s0x3137090050e1b9af:0xb5a6d91b8b489e76!8m2!3d19.406282!4d105.7757443!16s%2Fg%2F11lf12nrfn?entry=ttu" target="_blank">
+                            Bấm để mở bản đồ
+                            </a>
+                    
+                    <img src="images/dish.png" class="icon-eat">
+                </div>
+            </div>
+            <!--item end-->
+        </div>
+
+
+
+    </div>
+</section>
+<!--event section end-->
+<!--gallery section start-->
+<section class="gallery-section" data-scroll-index="3">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>Album ảnh cưới</h2>
+            </div>
+        </div>
+    </div>
+            <!--gallery item start-->
+            <div class="gallery-container">
+                <div class="gallery-box">
+                    <img src="images/anh1.jpg" alt="anh1" class="gallery-small-image">
+                </div>
+                <div class="gallery-box">
+                    <img src="images/anhphong1.jpg" alt="anhphong1" class="gallery-small-image">
+                </div>
+                <div class="gallery-box">
+                    <img src="images/anhphong2.jpg" alt="anhphong2" class="gallery-small-image">
+                </div>
+                <div class="gallery-box">
+                    <img src="images/anhdeban.jpg" alt="anhdeban" class="gallery-small-image">
+                </div>
+                <div class="gallery-box">
+                    <img src="images/anh2.jpg" alt="anh2" class="gallery-small-image">
+                </div>
+                <div class="gallery-box">
+                    <img src="images/anh3.jpg" alt="anh3" class="gallery-small-image">
+                </div>
+                <div class="gallery-box">
+                    <img src="images/anh4.jpg" alt="anh4" class="gallery-small-image">
+                </div>
+                <div class="gallery-box">
+                    <img src="images/anh5.jpg" alt="anh5" class="gallery-small-image">
 
