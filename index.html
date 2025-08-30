@@ -1,397 +1,323 @@
-<html lang="vi"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đức Thắng</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/pink.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-   
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thiệp cưới | Đức Thắng ❤ Minh Tuấn</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root{
+      --rose:#eeb7c7; --rose-2:#f7d9e2; --dark:#333; --text:#444; --bg:#fff; --muted:#777; --primary:#d63384;
+      --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    /* Header */
+    .header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #f1f1f1}
+    .nav-inner{max-width:var(--container);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+    .brand{font-family:Playfair Display,serif;font-size:22px;font-weight:700;color:var(--primary)}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{padding:10px 12px;border-radius:999px}
+    .menu a.active,.menu a:hover{background:var(--rose-2)}
+    .hamb{display:none;font-size:24px;cursor:pointer}
+
+    /* Hero */
+    .hero{position:relative;min-height:80vh;display:grid;place-items:center;background:url('images/anh6.jpg') center/cover no-repeat}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.35))}
+    .hero .wrap{position:relative;z-index:1;text-align:center;color:#fff;padding:40px 16px}
+    .hero .names{font-family:Playfair Display,serif;font-size:46px;line-height:1.2;margin:6px 0}
+    .hero p.lead{opacity:.95;font-size:18px;margin:6px 0 18px}
+    .date-badge{display:inline-block;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.2);backdrop-filter:blur(2px);border:1px solid rgba(255,255,255,.35)}
+    .countdown{display:flex;gap:12px;justify-content:center;margin-top:18px}
+    .cd-box{min-width:70px;padding:10px 8px;border-radius:12px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35)}
+    .cd-box .num{font-size:24px;font-weight:700}
+    .cd-box .lbl{font-size:12px;opacity:.9}
+
+    /* Sections */
+    section{padding:72px 16px}
+    .container{max-width:var(--container);margin:auto}
+    .section-title{font-family:Playfair Display,serif;font-size:32px;text-align:center;margin:0 0 24px;color:var(--dark)}
+    .muted{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 32px}
+
+    /* Couple */
+    .couple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+    .circle{width:220px;height:220px;border-radius:50%;border:6px solid var(--rose);overflow:hidden;margin:0 auto;box-shadow:var(--shadow);transition:all .3s ease}
+    .circle img{width:100%;height:100%;object-fit:cover}
+    .circle:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(238,183,199,0.8)}
+    .card h3{margin:4px 0 6px;font-size:20px}
+    .meta{display:flex;align-items:center;gap:10px;color:var(--muted)}
+
+    /* Timeline */
+    .timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .event{border-left:4px solid var(--primary);padding:12px 16px;border-radius:10px;background:#fff;box-shadow:var(--shadow)}
+    .event h4{margin:2px 0 6px}
+    .event .when{color:var(--muted);font-size:14px}
+
+    /* Gallery */
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .grid img{border-radius:12px;aspect-ratio:1/1;object-fit:cover}
+
+    /* RSVP */
+    form{display:grid;gap:12px}
+    .row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    input,select,textarea{width:100%;padding:12px 14px;border:1px solid #e6e6e6;border-radius:12px;font:inherit}
+    textarea{min-height:110px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--primary);color:#fff;border:none;cursor:pointer}
+    .btn:disabled{opacity:.6;cursor:not-allowed}
+
+    /* Gifts */
+    .gift-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .gift{display:grid;gap:8px;justify-items:center;padding:16px;border:1px solid #eee;border-radius:16px;background:#fff;box-shadow:var(--shadow)}
+    .gift img{max-width:220px;border-radius:12px}
+
+    /* Footer */
+    footer{padding:28px 16px;border-top:1px solid #f1f1f1;text-align:center;color:var(--muted)}
+
+    /* Floating buttons */
+    .music-btn,.top-btn{position:fixed;right:16px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow);z-index:1001;background:#fff;color:var(--primary);border:1px solid #eee;cursor:pointer}
+    .music-btn{bottom:78px}
+    .top-btn{bottom:20px;opacity:0;pointer-events:none;transition:opacity .2s}
+    .top-btn.show{opacity:1;pointer-events:auto}
+
+    /* Lightbox (CSS target) */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}
+    .lightbox img{max-width:92vw;max-height:86vh;border-radius:12px}
+    .lightbox:target{display:flex}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .timeline{grid-template-columns:1fr}
+      .couple{grid-template-columns:1fr}
+      .gift-grid{grid-template-columns:1fr}
+    }
+    @media (max-width: 760px){
+      .menu{display:none}
+      .hamb{display:block}
+      .menu.open{position:absolute;left:0;right:0;top:60px;background:#fff;border-bottom:1px solid #eee;display:flex;flex-direction:column}
+      .hero .names{font-size:34px}
+    }
+  </style>
 </head>
 <body>
-    <!--header start-->
-        <header class="header">
-            <div class="container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="logo">
-                        <a href="index.html">ĐT💕MT</a>
-                    </div>
-                    <div class="hamburger-btn">
-                        <span></span>
-                    </div>
-                    <div class="nav">
-                        <ul>
-                            <li><a data-scroll-nav="0" href="#" class="active">Home</a></li>
-                            <li><a data-scroll-nav="1" href="#">Thông tin</a></li>
-                            <li><a data-scroll-nav="2" href="#">Sự kiện</a></li>
-                            <li><a data-scroll-nav="3" href="#">Album ảnh cưới</a></li>
-                            <li><a data-scroll-nav="4" href="#">Tham gia sự kiện</a></li>
-                            <li><a data-scroll-nav="5" href="#">Mừng cưới</a></li>
-                        </ul>
-                    </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-inner">
+      <a class="brand" href="#home" data-link>ĐT ❤ MT</a>
+      <nav class="menu" id="menu">
+        <a href="#home" data-link>Trang chủ</a>
+        <a href="#couple" data-link>Thông tin</a>
+        <a href="#events" data-link>Sự kiện</a>
+        <a href="#gallery" data-link>Album</a>
+        <a href="#rsvp" data-link>Tham dự</a>
+        <a href="#gifts" data-link>Mừng cưới</a>
+      </nav>
+      <div class="hamb" id="hamb"><i class="bi bi-list"></i></div>
+    </div>
+  </header>
 
-                </div>
-            </div>
-        </header>
-        <!--header end-->
+  <!-- Hero with Countdown -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <p class="lead">Welcome to our wedding</p>
+      <div class="names">Đức Thắng &amp; Minh Tuấn</div>
+      <div class="date-badge"><i class="bi bi-calendar-heart"></i> 20/10/2025 • Thanh Hóa</div>
+      <div class="countdown" id="countdown">
+        <div class="cd-box"><div class="num" id="dd">--</div><div class="lbl">Ngày</div></div>
+        <div class="cd-box"><div class="num" id="hh">--</div><div class="lbl">Giờ</div></div>
+        <div class="cd-box"><div class="num" id="mm">--</div><div class="lbl">Phút</div></div>
+        <div class="cd-box"><div class="num" id="ss">--</div><div class="lbl">Giây</div></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- home section start-->
-         <section class="home-section" data-scroll-index="0">
-            <!--slide start-->
-            <div class="slide active" style="background-image: url('images/anh6.jpg');">
-                <div class="container">
-                <div class="row align-items-center">
-                    <div class="home-content">
-                        <p> Welcome to our wedding</p>
-                        <h1>Đức Thắng &amp; Minh Tuấn</h1>
-                        <span>20/10/2025</span>
-                        <h2>Sự hiện diện của quý vị là niềm vinh dự của gia đình chúng tôi</h2>
-                    </div>
-                </div>
-                </div>
-            </div>
-<!--slide end-->
-         </section>
+  <!-- Couple -->
+  <section id="couple">
+    <div class="couple">
+      <div>
+        <div class="circle">
+          <img src="images/codau.jpg" alt="Cô dâu">
+        </div>
+        <h3 style="text-align:center;margin-top:12px">Nguyễn Minh Tuấn</h3>
+        <div class="meta" style="justify-content:center"><i class="bi bi-geo-alt-fill"></i> Xã An Thắng, An Lão, Hải Phòng</div>
+        <p style="text-align:center"><a href="https://www.facebook.com/thang.keky/" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></p>
+      </div>
+      <div>
+        <div class="circle">
+          <img src="images/chure.jpg" alt="Chú rể">
+        </div>
+        <h3 style="text-align:center;margin-top:12px">Dương Đức Thắng</h3>
+        <div class="meta" style="justify-content:center"><i class="bi bi-geo-alt-fill"></i> SN 57, Đường Cầm Bá Thước, Thường Xuân, Thanh Hóa</div>
+        <p style="text-align:center"><a href="https://www.facebook.com/profile.php?id=100037015563266" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></p>
+      </div>
+    </div>
+  </section>
 
-         <!-- home section end-->
-          
-<!--couple section start-->
-<section class="couple-section" data-scroll-index="1">
+  <!-- Events -->
+  <section id="events" style="background:linear-gradient(180deg,#fff, #fff 40%, #fdf3f6)">
     <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Cô dâu &amp; Chú rể</h2>
-            </div>
-        <div class="row">
-            <div class="couple">
-                <img src="images/codau.jpg" alt="Cô dâu và chú rể">
-                <h3>Nguyễn Minh Tuấn</h3>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/thang.keky/" title="facebook">
-                        <i class="bi-facebook"></i>
-                    </a>
-                </div>
-                <p>Ông: Nguyễn Minh Hùng
-                    <br>
-                    Bà: Hoàng Thị Thương
-                </p>
-                <i class="bi-geo-alt-fill"> Tư gia nhà gái: Xã An Thắng, Huyện An Lão, Thành phố Hải Phòng</i> 
-            </div>
-            <div class="couple">
-                <i class="bi-heart-fill"></i>
-                <img src="images/chure.jpg" alt="Cô dâu và chú rể">
-                <h3>Dương Đức Thắng</h3>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=100037015563266" title="facebook">
-                        <i class="bi-facebook"></i>
-                    </a>
-                </div>
-                <p>Ông: Dương Đức Thụ
-                    <br>
-                    Bà: Lê Thị Nhưng
-                </p>
-                <i class="bi-geo-alt-fill">Tư gia nhà trai: SN 57, Đường Cầm Bá Thước, Huyện Thường Xuân, Tỉnh Thanh Hóa</i>
-            </div>
+      <h2 class="section-title">Our Wedding</h2>
+      <div class="timeline">
+        <div class="event">
+          <h4>LỄ VU QUY</h4>
+          <div class="when"><i class="bi bi-calendar-heart"></i> Chủ Nhật, 19/10/2025 • 7:00–9:00</div>
+          <div class="meta"><i class="bi bi-geo-alt-fill"></i> Tư gia nhà gái – Xã An Thắng, An Lão, Hải Phòng</div>
         </div>
-    </div>
-</div></section>
-<!--couple section end-->
-
-<!--event section start-->
-<section class="event-section" data-scroll-index="2">
-    <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Our Wedding</h2>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <!--item start-->
-            <div class="event-item">
-                <div class="event-item-inner">
-                    <h3>LỄ VU QUY</h3>
-                    <span class="date"><i class="bi bi-calendar-heart"></i> Chủ Nhật, 19/10/2025</span>
-                    <span class="date">(27/08/2025 âm lịch)</span>
-                    <spam class="time"><i class="bi bi-alarm"></i> 7:00 - 9:00</spam>
-                    <br>
-                    <i class="bi-geo-alt-fill"> Tư gia nhà gái</i>
-                    <p> Xã An Thắng, Huyện An Lão, Thành phố Hải Phòng</p>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6">
-                        <img src="images/bando01.jpg" alt="Hình ảnh bản đồ">
-                        <br>
-                        </a>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6" target="_blank">
-                            Bấm để mở bản đồ
-                            </a>
-                            <i class="bi-calendar2-heart-fill"></i>
-                </div>
-            </div>
-            <!--item end-->
-             <!--item start-->
-             <div class="event-item">
-                <div class="event-item-inner">
-                    <h3>LỄ THÀNH HÔN</h3>
-                    <span class="date"><i class="bi bi-calendar-heart"></i> Thứ Hai, 20/10/2025</span>
-                    <span class="date">(29/08/2025 âm lịch)</span>
-                    <spam class="time"><i class="bi bi-alarm"></i> 10:30 - 15:00</spam>
-                    <br>
-                    <p>SN 57, Đường Cầm Bá Thước, Huyện Thường Xuân, Tỉnh Thanh Hóa</p>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6">
-                        <img src="images/bando01.jpg" alt="Hình ảnh bản đồ">
-                        <br>
-                        </a>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6" target="_blank">
-                            Bấm để mở bản đồ
-                            </a>
-                            <i class="bi-calendar2-heart-fill"></i>
-                </div>
-            </div>
-            <!--item end-->
-        </div>
-
-
-
-
-        <br>
-        <div class="row justify-content-center">
-            <!--item start-->
-            <div class="event-item">
-                <div class="event-item-inner">
-                    <h3>Tiệc cưới nhà gái</h3>
-
-                    <span class="date"><i class="bi bi-calendar-check"></i> Chủ Nhật, 19/10/2025</span>  
-                    <span class="date">(15/08/2024 âm lịch)</span>
-                    <spam class="time"><i class="bi bi-alarm"></i> 17:30</spam>
-                    <br>
-                    <i class="bi-geo-alt-fill"> Tư gia nhà gái</i>
-                    <p> Xã An Thắng, Huyện An Lão, Thành phố Hải Phòng</p>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6">
-                        <img src="images/bando01.jpg" alt="Hình ảnh bản đồ">
-                        <br>
-                        </a>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6" target="_blank">
-                            Bấm để mở bản đồ
-                            </a>
-                    
-                    
-                    <img src="images/dish.png" class="icon-eat">
-                </div>
-            </div>
-            <!--item end-->
-             <!--item start-->
-             <div class="event-item">
-                <div class="event-item-inner">
-                    <h3>Tiệc cưới nhà trai</h3>
-                    <span class="date"><i class="bi bi-calendar-check"></i> Chủ Nhật, 19/10/2025</span>
-                    <span class="date">(27/08/2025 âm lịch)</span>
-                    <spam class="time"><i class="bi bi-alarm"></i> 10:30</spam>
-                    <br>
-                    <i class="bi-geo-alt-fill"> Tư gia nhà trai</i>
-                    <p>SN 57, Đường Cầm Bá Thước, Huyện Thường Xuân, Tỉnh Thanh Hóa</p>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6">
-                        <img src="images/bando01.jpg" alt="Hình ảnh bản đồ">
-                        <br>
-                        </a>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6" target="_blank">
-                            Bấm để mở bản đồ
-                            </a>
-                    
-                    <img src="images/dish.png" class="icon-eat">
-                </div>
-            </div>
-            <!--item end-->
-        </div>
-
-
-
-    </div>
-</section>
-<!--event section end-->
-<!--gallery section start-->
-<section class="gallery-section" data-scroll-index="3">
-    <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Album ảnh cưới</h2>
-            </div>
-        </div>
-    </div>
-            <!--gallery item start-->
-            <div class="gallery-container">
-                <div class="gallery-box">
-                    <img src="images/anh1.jpg" alt="anh1" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anhphong1.jpg" alt="anhphong1" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anhphong2.jpg" alt="anhphong2" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anhdeban.jpg" alt="anhdeban" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anh2.jpg" alt="anh2" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anh3.jpg" alt="anh3" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anh4.jpg" alt="anh4" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anh5.jpg" alt="anh5" class="gallery-small-image">
-                </div>
-        </div>       
-            <!--gallery item end-->
-</section>
-<!--gallery section end-->
-<!--rsvp section start-->
-<section class="rsvp-section" data-scroll-index="4">
-    <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Xác nhận tham dự</h2>
-                <p>Vui lòng điền vào form này trước ngày 18/10/2025</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="rsvp-form">
-               <form class="form" id="myForm">
-    <div class="row">
-        <div class="input-group w50">
-            <input type="text" name="fullname" placeholder="Họ và tên" class="input-control" required="">
-        </div>
-        <div class="input-group w50">
-            <input type="text" name="email" placeholder="Số điện thoại" class="input-control" required="">
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-group w50">
-            <input type="text" name="guest_count" placeholder="Số lượng tham dự" class="input-control" required="">
-        </div>
-        <div class="input-group w50">
-            <select name="guest_slide" class="input-control" required="">
-                <option value="Khách nhà trai">Khách nhà trai</option>
-                <option value="Khách nhà gái">Khách nhà gái</option>
-                <option value="Khách nhà trai">Cả hai nhà</option>
-            </select>                       
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-group">
-            <select name="attendance" class="input-control" required="">
-                <option value="Xác nhận tham gia">Xác nhận tham gia</option>
-                <option value="Không tham gia được">Không tham gia được</option>
-            </select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-group">
-            <textarea name="wishes" placeholder="Lời chúc" class="input-control" required=""></textarea>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-group">
-            <button type="submit" class="btn-1">Gửi</button>
-        </div>
-    </div>    
-</form>
-
-<!-- Phần thông báo -->
-<div id="responseMessage"></div>
-
-<script>
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Ngăn form gửi và chuyển trang
-
-    const formData = new FormData(this);
-
-    fetch('https://script.google.com/macros/s/AKfycbz_Ro9z-vc8SELF4ODta7EJJ99hRSfV9XJf4Sb2oenvaWPGq5PlYNuWBv8l7kbzAMM/exec', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(result => {
-        document.getElementById('responseMessage').textContent = 'Cảm ơn lời chúc của bạn. Sự hiện diện của bạn là niềm vinh dự của gia đình chúng tôi!';
-        document.getElementById('myForm').reset(); // Xóa dữ liệu trong form (tùy chọn)
-    })
-    .catch(error => {
-        document.getElementById('responseMessage').textContent = 'Có lỗi xảy ra, vui lòng thử lại!';
-        console.error('Error:', error);
-    });
-});
-</script>
-
-<!-- Phần thông báo -->
-<div id="responseMessage"></div>
-
-
-            </div>
-        </div>
-    </div>
-</section>
-<!--rsvp section end-->
-<!--gift section start-->
-<section class="gifts-section" data-scroll-index="5">
-    <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Mừng cưới</h2>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <!--item start-->
-            <div class="gifts-item">
-                <div class="gifts-item-inner">
-                    <h3>Mừng cưới chú rể</h3>
-                    <span class="date">Dương Đức Thắng</span>
-                    <spam class="time">Techcombank</spam>
-                    <p>19033036669019</p>
-                    <img src="images/qrchure.jpg" alt="gifts">
-                    <i class="bi-box2-heart-fill"></i>
-                </div>
-            </div>
-            <!--item end-->
-             <!--item start-->
-             <div class="gifts-item">
-                <div class="gifts-item-inner">
-                    <h3>Mừng cưới cô dâu</h3>
-                    <span class="date">Nguyễn Minh Tuấn</span>
-                    <spam class="time">Techcombank</spam>
-                    <p>19033036669019</p>
-                    <img src="images/qrcodau.jpg" alt="gifts">
-                    <i class="bi-box2-heart-fill"></i>
-                </div>
-            </div>
-            <!--item end-->
-        </div>
-    </div>
-</section>
-
-<!--gift section end-->
-
-<footer>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col text-center">
-          <small class="block">©2024 Designed by Thangkeky.</small>
+        <div class="event">
+          <h4>LỄ THÀNH HÔN</h4>
+          <div class="when"><i class="bi bi-calendar-heart"></i> Thứ Hai, 20/10/2025 • 10:30–15:00</div>
+          <div class="meta"><i class="bi bi-geo-alt-fill"></i> SN 57, Đường Cầm Bá Thước, Thường Xuân, Thanh Hóa</div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Album ảnh cưới</h2>
+      <div class="grid">
+        <a href="#pic1"><img src="images/anh1.jpg" alt="Ảnh 1"></a>
+        <a href="#pic2"><img src="images/anh2.jpg" alt="Ảnh 2"></a>
+        <a href="#pic3"><img src="images/anh3.jpg" alt="Ảnh 3"></a>
+        <a href="#pic4"><img src="images/anh4.jpg" alt="Ảnh 4"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" style="background:#fff7fa">
+    <div class="container">
+      <h2 class="section-title">Xác nhận tham dự</h2>
+      <p class="muted">Vui lòng điền vào form này trước ngày 18/10/2025</p>
+      <form id="rsvpForm">
+        <div class="row">
+          <input name="fullname" placeholder="Họ và tên" required />
+          <input name="phone" placeholder="Số điện thoại" required />
+        </div>
+        <div class="row">
+          <input name="guest_count" placeholder="Số lượng tham dự" required />
+          <select name="side" required>
+            <option value="Khách nhà trai">Khách nhà trai</option>
+            <option value="Khách nhà gái">Khách nhà gái</option>
+            <option value="Cả hai nhà">Cả hai nhà</option>
+          </select>
+        </div>
+        <select name="attendance" required>
+          <option value="Xác nhận tham gia">Xác nhận tham gia</option>
+          <option value="Không tham gia được">Không tham gia được</option>
+        </select>
+        <textarea name="wishes" placeholder="Lời chúc"></textarea>
+        <button class="btn" type="submit" id="submitBtn"><i class="bi bi-send"></i> Gửi</button>
+        <div id="msg" class="muted" style="margin-top:6px"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Gifts -->
+  <section id="gifts">
+    <div class="container">
+      <h2 class="section-title">Mừng cưới</h2>
+      <div class="gift-grid">
+        <div class="gift">
+          <h3>Mừng cưới chú rể</h3>
+          <div class="muted">Dương Đức Thắng • Techcombank</div>
+          <div class="muted">STK: <strong>19033036669019</strong></div>
+          <img src="images/qrchure.jpg" alt="QR chú rể">
+        </div>
+        <div class="gift">
+          <h3>Mừng cưới cô dâu</h3>
+          <div class="muted">Nguyễn Minh Tuấn • Techcombank</div>
+          <div class="muted">STK: <strong>19033036669019</strong></div>
+          <img src="images/qrcodau.jpg" alt="QR cô dâu">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    ©2024 Designed by Thangkeky.
   </footer>
 
-<!--audio start-->
-<audio id="myAudio" loop="loop" src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mp3"></audio>
-<i class="bi-music-note-beamed pause"></i>
-<!--audio end-->
+  <!-- Audio -->
+  <audio id="bgm" preload="auto" loop>
+    <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg" />
+  </audio>
+  <button class="music-btn" id="musicBtn" title="Phát/Dừng nhạc"><i class="bi bi-music-note-beamed"></i></button>
+  <button class="top-btn" id="topBtn" title="Lên đầu trang"><i class="bi bi-arrow-up"></i></button>
 
-<!--scroll-->
-<script src="js/scrollIt.min.js"></script>
+  <script>
+    // ===== Mobile menu toggle =====
+    const hamb = document.getElementById('hamb');
+    const menu = document.getElementById('menu');
+    hamb.addEventListener('click', ()=> menu.classList.toggle('open'));
 
+    // ===== Smooth scroll with header offset =====
+    const header = document.querySelector('.header');
+    const links = document.querySelectorAll('[data-link]');
+    links.forEach(l=>l.addEventListener('click',e=>{
+      e.preventDefault();
+      menu.classList.remove('open');
+      const target=document.querySelector(l.getAttribute('href'));
+      const y=target.getBoundingClientRect().top+window.scrollY-header.offsetHeight;
+      window.scrollTo({top:y,behavior:'smooth'});
+    }));
 
+    // ===== Active menu link on scroll =====
+    const sections=document.querySelectorAll('section');
+    window.addEventListener('scroll',()=>{
+      let cur="";
+      sections.forEach(s=>{if(window.scrollY>=s.offsetTop-header.offsetHeight-60)cur=s.id});
+      links.forEach(l=>l.classList.remove('active'));
+      if(cur)document.querySelectorAll('[href="#'+cur+'"]').forEach(l=>l.classList.add('active'));
+    });
 
+    // ===== Back to top button =====
+    const topBtn=document.getElementById('topBtn');
+    window.addEventListener('scroll',()=>{if(window.scrollY>300)topBtn.classList.add('show');else topBtn.classList.remove('show')});
+    topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+    // ===== Countdown =====
+    const weddingDate=new Date("Oct 20, 2025 10:30:00").getTime();
+    setInterval(()=>{
+      const now=new Date().getTime();
+      const t=weddingDate-now;
+      if(t<0)return;
+      document.getElementById("dd").innerText=Math.floor(t/(1000*60*60*24));
+      document.getElementById("hh").innerText=Math.floor((t%(1000*60*60*24))/(1000*60*60));
+      document.getElementById("mm").innerText=Math.floor((t%(1000*60*60))/(1000*60));
+      document.getElementById("ss").innerText=Math.floor((t%(1000*60))/1000);
+    },1000);
+
+    // ===== Music toggle =====
+    const bgm=document.getElementById("bgm");
+    const musicBtn=document.getElementById("musicBtn");
+    let playing=false;
+    musicBtn.addEventListener("click",()=>{
+      if(!playing){
+        bgm.play().then(()=>{playing=true;musicBtn.innerHTML='<i class="bi bi-pause-circle"></i>';})
+      }else{
+        bgm.pause();playing=false;musicBtn.innerHTML='<i class="bi bi-music-note-beamed"></i>';
+      }
+    });
+
+    // ===== RSVP form =====
+    const rsvpForm=document.getElementById("rsvpForm");
+    const msg=document.getElementById("msg");
+    rsvpForm.addEventListener("submit",e=>{
+      e.preventDefault();
+      document.getElementById("submitBtn").disabled=true;
+      msg.innerText="Cảm ơn bạn đã gửi phản hồi!";
+    });
+  </script>
 </body>
+</html>
