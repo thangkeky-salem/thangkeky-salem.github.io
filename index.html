@@ -281,54 +281,36 @@
   </footer>
 
   <!-- Audio -->
-<audio id="bgm" autoplay loop muted>
+<!-- Audio -->
+<audio id="bgm" autoplay loop>
   <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg">
   Trình duyệt của bạn không hỗ trợ phát nhạc.
 </audio>
 
 <!-- Nút bật/tắt nhạc -->
-<button id="musicToggle" class="music-btn">
+<button id="musicBtn" class="music-btn">
   <i class="bi bi-music-note-beamed"></i>
 </button>
 
-<style>
-.music-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #ff4d6d;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 12px 15px;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 9999;
-}
-.music-btn:hover {
-  background: #ff3355;
-}
-</style>
-
 <script>
   const bgm = document.getElementById("bgm");
-  const btn = document.getElementById("musicToggle");
+  const musicBtn = document.getElementById("musicBtn");
+  let playing = false;
 
-  btn.addEventListener("click", () => {
-    if (bgm.muted) {
-      bgm.muted = false;
-      bgm.play();
-      btn.innerHTML = '<i class="bi bi-pause-circle"></i>';
-    } else if (bgm.paused) {
-      bgm.play();
-      btn.innerHTML = '<i class="bi bi-pause-circle"></i>';
-    } else {
+  function toggleMusic(){
+    if(!playing){
+      bgm.play().then(()=>{
+        playing=true;
+        musicBtn.innerHTML='<i class="bi bi-pause-circle"></i>';
+      }).catch(()=>{});
+    }else{
       bgm.pause();
-      btn.innerHTML = '<i class="bi bi-music-note-beamed"></i>';
+      playing=false;
+      musicBtn.innerHTML='<i class="bi bi-music-note-beamed"></i>';
     }
-  });
-  <script>
+  }
+  musicBtn.addEventListener("click", toggleMusic);
+</script>
     // ===== Mobile menu toggle =====
     const hamb = document.getElementById('hamb');
     const menu = document.getElementById('menu');
