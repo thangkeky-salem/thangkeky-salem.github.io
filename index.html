@@ -17,7 +17,7 @@
       --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    html,body{margin:0;padding:0;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
 
@@ -64,7 +64,7 @@
 
     /* Gallery */
     .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .grid img{border-radius:12px;aspect-ratio:1/1;object-fit:cover}
+    .grid img{border-radius:12px;aspect-ratio:1/1;object-fit:cover;cursor:pointer}
 
     /* RSVP */
     form{display:grid;gap:12px}
@@ -88,7 +88,7 @@
     .top-btn{bottom:20px;opacity:0;pointer-events:none;transition:opacity .2s}
     .top-btn.show{opacity:1;pointer-events:auto}
 
-    /* Lightbox (CSS target) */
+    /* Lightbox */
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}
     .lightbox img{max-width:92vw;max-height:86vh;border-radius:12px}
     .lightbox:target{display:flex}
@@ -144,17 +144,13 @@
   <section id="couple">
     <div class="couple">
       <div>
-        <div class="circle">
-          <img src="images/codau.jpg" alt="Cô dâu">
-        </div>
+        <div class="circle"><img src="images/codau.jpg" alt="Cô dâu"></div>
         <h3 style="text-align:center;margin-top:12px">Nguyễn Minh Tuấn</h3>
         <div class="meta" style="justify-content:center"><i class="bi bi-geo-alt-fill"></i> Xã An Thắng, An Lão, Hải Phòng</div>
         <p style="text-align:center"><a href="https://www.facebook.com/thang.keky/" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></p>
       </div>
       <div>
-        <div class="circle">
-          <img src="images/chure.jpg" alt="Chú rể">
-        </div>
+        <div class="circle"><img src="images/chure.jpg" alt="Chú rể"></div>
         <h3 style="text-align:center;margin-top:12px">Dương Đức Thắng</h3>
         <div class="meta" style="justify-content:center"><i class="bi bi-geo-alt-fill"></i> SN 57, Đường Cầm Bá Thước, Thường Xuân, Thanh Hóa</div>
         <p style="text-align:center"><a href="https://www.facebook.com/profile.php?id=100037015563266" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></p>
@@ -190,9 +186,23 @@
         <a href="#pic2"><img src="images/anh2.jpg" alt="Ảnh 2"></a>
         <a href="#pic3"><img src="images/anh3.jpg" alt="Ảnh 3"></a>
         <a href="#pic4"><img src="images/anh4.jpg" alt="Ảnh 4"></a>
+        <a href="#pic5"><img src="images/anh5.jpg" alt="Ảnh 5"></a>
+        <a href="#pic6"><img src="images/anh6.jpg" alt="Ảnh 6"></a>
+        <a href="#pic7"><img src="images/anh7.jpg" alt="Ảnh 7"></a>
+        <a href="#pic8"><img src="images/anh8.jpg" alt="Ảnh 8"></a>
       </div>
     </div>
   </section>
+
+  <!-- Lightbox for gallery -->
+  <div id="pic1" class="lightbox"><a href="#gallery"><img src="images/anh1.jpg"></a></div>
+  <div id="pic2" class="lightbox"><a href="#gallery"><img src="images/anh2.jpg"></a></div>
+  <div id="pic3" class="lightbox"><a href="#gallery"><img src="images/anh3.jpg"></a></div>
+  <div id="pic4" class="lightbox"><a href="#gallery"><img src="images/anh4.jpg"></a></div>
+  <div id="pic5" class="lightbox"><a href="#gallery"><img src="images/anh5.jpg"></a></div>
+  <div id="pic6" class="lightbox"><a href="#gallery"><img src="images/anh6.jpg"></a></div>
+  <div id="pic7" class="lightbox"><a href="#gallery"><img src="images/anh7.jpg"></a></div>
+  <div id="pic8" class="lightbox"><a href="#gallery"><img src="images/anh8.jpg"></a></div>
 
   <!-- RSVP -->
   <section id="rsvp" style="background:#fff7fa">
@@ -234,59 +244,62 @@
           <div class="muted">STK: <strong>19033036669019</strong></div>
           <img src="images/qrchure.jpg" alt="QR chú rể">
         </div>
-        <div class="gift">
+                <div class="gift">
           <h3>Mừng cưới cô dâu</h3>
-          <div class="muted">Nguyễn Minh Tuấn • Techcombank</div>
-          <div class="muted">STK: <strong>19033036669019</strong></div>
+          <div class="muted">Nguyễn Minh Tuấn • Vietcombank</div>
+          <div class="muted">STK: <strong>0123456789</strong></div>
           <img src="images/qrcodau.jpg" alt="QR cô dâu">
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    ©2024 Designed by Thangkeky.
+    <p>💖 Trân trọng kính mời quý khách tới chung vui cùng chúng tôi 💖</p>
+    <p>© 2025 Đức Thắng ❤ Minh Tuấn</p>
   </footer>
 
-  <!-- Audio -->
-  <audio id="bgm" preload="auto" loop>
-    <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg" />
+  <!-- Audio & Floating Buttons -->
+  <audio id="bgm" autoplay loop>
+    <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
   </audio>
-  <button class="music-btn" id="musicBtn" title="Phát/Dừng nhạc"><i class="bi bi-music-note-beamed"></i></button>
-  <button class="top-btn" id="topBtn" title="Lên đầu trang"><i class="bi bi-arrow-up"></i></button>
+  <button id="musicBtn" class="music-btn"><i class="bi bi-music-note-beamed"></i></button>
+  <button id="topBtn" class="top-btn"><i class="bi bi-arrow-up"></i></button>
 
+  <!-- Scripts -->
   <script>
-    // ===== Mobile menu toggle =====
-    const hamb = document.getElementById('hamb');
-    const menu = document.getElementById('menu');
-    hamb.addEventListener('click', ()=> menu.classList.toggle('open'));
+    const menu=document.getElementById("menu");
+    const hamb=document.getElementById("hamb");
+    hamb.addEventListener("click",()=>menu.classList.toggle("open"));
 
-    // ===== Smooth scroll with header offset =====
-    const header = document.querySelector('.header');
-    const links = document.querySelectorAll('[data-link]');
-    links.forEach(l=>l.addEventListener('click',e=>{
+    // Cuộn mượt
+    const header=document.querySelector(".header");
+    const links=document.querySelectorAll("[data-link]");
+    links.forEach(l=>l.addEventListener("click",e=>{
       e.preventDefault();
-      menu.classList.remove('open');
-      const target=document.querySelector(l.getAttribute('href'));
+      menu.classList.remove("open");
+      const target=document.querySelector(l.getAttribute("href"));
       const y=target.getBoundingClientRect().top+window.scrollY-header.offsetHeight;
-      window.scrollTo({top:y,behavior:'smooth'});
+      window.scrollTo({top:y,behavior:"smooth"});
     }));
 
-    // ===== Active menu link on scroll =====
-    const sections=document.querySelectorAll('section');
-    window.addEventListener('scroll',()=>{
+    // Active link
+    const sections=document.querySelectorAll("section");
+    window.addEventListener("scroll",()=>{
       let cur="";
       sections.forEach(s=>{if(window.scrollY>=s.offsetTop-header.offsetHeight-60)cur=s.id});
-      links.forEach(l=>l.classList.remove('active'));
-      if(cur)document.querySelectorAll('[href="#'+cur+'"]').forEach(l=>l.classList.add('active'));
+      links.forEach(l=>l.classList.remove("active"));
+      if(cur)document.querySelectorAll('[href="#'+cur+'"]').forEach(l=>l.classList.add("active"));
     });
 
-    // ===== Back to top button =====
-    const topBtn=document.getElementById('topBtn');
-    window.addEventListener('scroll',()=>{if(window.scrollY>300)topBtn.classList.add('show');else topBtn.classList.remove('show')});
-    topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    // Back to top
+    const topBtn=document.getElementById("topBtn");
+    window.addEventListener("scroll",()=>{if(window.scrollY>300)topBtn.classList.add("show");else topBtn.classList.remove("show")});
+    topBtn.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 
-    // ===== Countdown =====
+    // Countdown
     const weddingDate=new Date("Oct 20, 2025 10:30:00").getTime();
     setInterval(()=>{
       const now=new Date().getTime();
@@ -298,19 +311,19 @@
       document.getElementById("ss").innerText=Math.floor((t%(1000*60))/1000);
     },1000);
 
-    // ===== Music toggle =====
+    // Music toggle
     const bgm=document.getElementById("bgm");
     const musicBtn=document.getElementById("musicBtn");
     let playing=false;
     musicBtn.addEventListener("click",()=>{
       if(!playing){
-        bgm.play().then(()=>{playing=true;musicBtn.innerHTML='<i class="bi bi-pause-circle"></i>';})
+        bgm.play().then(()=>{playing=true;musicBtn.innerHTML='<i class="bi bi-pause-circle"></i>';});
       }else{
         bgm.pause();playing=false;musicBtn.innerHTML='<i class="bi bi-music-note-beamed"></i>';
       }
     });
 
-    // ===== RSVP form =====
+    // RSVP form
     const rsvpForm=document.getElementById("rsvpForm");
     const msg=document.getElementById("msg");
     rsvpForm.addEventListener("submit",e=>{
@@ -321,3 +334,4 @@
   </script>
 </body>
 </html>
+
