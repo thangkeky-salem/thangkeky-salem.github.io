@@ -1,381 +1,231 @@
-<html lang="vi"><head>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đức Thắng</title>
+    <title>Đức Thắng & Minh Tuấn</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/pink.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/scrollIt.min.js"></script>
+    <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
+    <style>
+      /* Header cố định */
+      .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 999;
+      }
+      body {
+        padding-top: 80px; /* bù cho header */
+      }
+    </style>
 </head>
 <body>
- <header class="header">
-    <div class="nav-inner">
-      <a class="brand" href="#home" data-link>ĐT ❤ MT</a>
-      <nav class="menu" id="menu">
-        <a href="#home" data-link>Trang chủ</a>
-        <a href="#couple" data-link>Thông tin</a>
-        <a href="#events" data-link>Sự kiện</a>
-        <a href="#gallery" data-link>Album</a>
-        <a href="#rsvp" data-link>Tham dự</a>
-        <a href="#gifts" data-link>Mừng cưới</a>
-      </nav>
-      <div class="hamb" id="hamb"><i class="bi bi-list"></i></div>
-    </div>
-  </header>
-        <!-- Hero -->
-          <section class="hero" id="home">
-    <div class="wrap">
-      <p class="lead">Welcome to our wedding</p>
-      <div class="names">Đức Thắng 💕 Minh Tuấn</div>
-      <div class="date-badge"><i class="bi bi-calendar-heart"></i> 20/10/2025 • Thanh Hóa</div>
-      <div class="countdown" id="countdown">
-        <div class="cd-box"><div class="num" id="dd">--</div><div class="lbl">Ngày</div></div>
-        <div class="cd-box"><div class="num" id="hh">--</div><div class="lbl">Giờ</div></div>
-        <div class="cd-box"><div class="num" id="mm">--</div><div class="lbl">Phút</div></div>
-        <div class="cd-box"><div class="num" id="ss">--</div><div class="lbl">Giây</div></div>
-      </div>
-    </div>
-  </section>
-          
-<!-- Couple -->
-<section id="couple" style="background:#f7f7f7;padding:80px 0;">
+
+<!--header start-->
+<header class="header">
     <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Cô dâu &amp; Chú rể</h2>
+        <div class="row align-items-center justify-content-between">
+            <div class="logo">
+                <a href="index.html">ĐT💕MT</a>
             </div>
+            <div class="hamburger-btn">
+                <span></span>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a data-scroll-nav="0" href="#" class="active">Home</a></li>
+                    <li><a data-scroll-nav="1" href="#">Thông tin</a></li>
+                    <li><a data-scroll-nav="2" href="#">Sự kiện</a></li>
+                    <li><a data-scroll-nav="3" href="#">Album ảnh cưới</a></li>
+                    <li><a data-scroll-nav="4" href="#">Tham gia sự kiện</a></li>
+                    <li><a data-scroll-nav="5" href="#">Mừng cưới</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!--header end-->
+
+<!-- Home section -->
+<section class="home-section" data-scroll-index="0">
+    <div class="slide active" style="background-image: url('images/anh6.jpg');">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="home-content">
+                    <p>Welcome to our wedding</p>
+                    <h1>Đức Thắng & Minh Tuấn</h1>
+                    <span>20/10/2025</span>
+                    <h2>Sự hiện diện của quý vị là niềm vinh dự của gia đình chúng tôi</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Couple section -->
+<section class="couple-section" data-scroll-index="1">
+    <div class="container">
+        <div class="section-title"><h2>Cô dâu & Chú rể</h2></div>
         <div class="row">
             <div class="couple">
                 <img src="images/codau.jpg" alt="Cô dâu và chú rể">
                 <h3>Nguyễn Minh Tuấn</h3>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/thang.keky/" title="facebook">
-                        <i class="bi-facebook"></i>
-                    </a>
+                    <a href="https://www.facebook.com/thang.keky/" title="facebook"><i class="bi-facebook"></i></a>
                 </div>
-                <p>Ông: Nguyễn Minh Hùng
-                    <br>
-                    Bà: Hoàng Thị Thương
-                </p>
-                <i class="bi-geo-alt-fill"> Tư gia nhà gái: Xã An Thắng, Huyện An Lão, Thành phố Hải Phòng</i> 
+                <p>Ông: Nguyễn Minh Hùng<br>Bà: Hoàng Thị Thương</p>
+                <i class="bi-geo-alt-fill">Tư gia nhà gái: Xã An Thắng, Huyện An Lão, Thành phố Hải Phòng</i>
             </div>
             <div class="couple">
                 <i class="bi-heart-fill"></i>
                 <img src="images/chure.jpg" alt="Cô dâu và chú rể">
                 <h3>Dương Đức Thắng</h3>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=100037015563266" title="facebook">
-                        <i class="bi-facebook"></i>
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100037015563266" title="facebook"><i class="bi-facebook"></i></a>
                 </div>
-                <p>Ông: Dương Đức Thụ
-                    <br>
-                    Bà: Lê Thị Nhưng
-                </p>
+                <p>Ông: Dương Đức Thụ<br>Bà: Lê Thị Nhưng</p>
                 <i class="bi-geo-alt-fill">Tư gia nhà trai: SN 57, Đường Cầm Bá Thước, Huyện Thường Xuân, Tỉnh Thanh Hóa</i>
             </div>
         </div>
     </div>
-</div></section>
+</section>
 
-<!--event section start-->
+<!-- Event section -->
 <section class="event-section" data-scroll-index="2">
     <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Our Wedding</h2>
-            </div>
-        </div>
+        <div class="section-title"><h2>Our Wedding</h2></div>
         <div class="row justify-content-center">
-            <!--item start-->
+            <!-- Lễ Vu Quy -->
             <div class="event-item">
                 <div class="event-item-inner">
                     <h3>LỄ VU QUY</h3>
                     <span class="date"><i class="bi bi-calendar-heart"></i> Chủ Nhật, 19/10/2025</span>
                     <span class="date">(27/08/2025 âm lịch)</span>
-                    <spam class="time"><i class="bi bi-alarm"></i> 7:00 - 9:00</spam>
+                    <span class="time"><i class="bi bi-alarm"></i> 7:00 - 9:00</span>
                     <br>
-                    <i class="bi-geo-alt-fill"> Tư gia nhà gái</i>
-                    <p> Xã An Thắng, Huyện An Lão, Thành phố Hải Phòng</p>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6">
-                        <img src="images/bando01.jpg" alt="Hình ảnh bản đồ">
-                        <br>
-                        </a>
+                    <i class="bi-geo-alt-fill">Tư gia nhà gái</i>
+                    <p>Xã An Thắng, Huyện An Lão, Thành phố Hải Phòng</p>
                     <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6" target="_blank">
-                            Bấm để mở bản đồ
-                            </a>
-                            <i class="bi-calendar2-heart-fill"></i>
+                        <img src="images/bando01.jpg" alt="Bản đồ"><br>Bấm để mở bản đồ
+                    </a>
                 </div>
             </div>
-            <!--item end-->
-             <!--item start-->
-             <div class="event-item">
+            <!-- Lễ Thành Hôn -->
+            <div class="event-item">
                 <div class="event-item-inner">
                     <h3>LỄ THÀNH HÔN</h3>
                     <span class="date"><i class="bi bi-calendar-heart"></i> Thứ Hai, 20/10/2025</span>
                     <span class="date">(29/08/2025 âm lịch)</span>
-                    <spam class="time"><i class="bi bi-alarm"></i> 10:30 - 15:00</spam>
+                    <span class="time"><i class="bi bi-alarm"></i> 10:30 - 15:00</span>
                     <br>
                     <p>SN 57, Đường Cầm Bá Thước, Huyện Thường Xuân, Tỉnh Thanh Hóa</p>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6">
-                        <img src="images/bando01.jpg" alt="Hình ảnh bản đồ">
-                        <br>
-                        </a>
                     <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6" target="_blank">
-                            Bấm để mở bản đồ
-                            </a>
-                            <i class="bi-calendar2-heart-fill"></i>
+                        <img src="images/bando01.jpg" alt="Bản đồ"><br>Bấm để mở bản đồ
+                    </a>
                 </div>
             </div>
-            <!--item end-->
         </div>
-
-
-
-
-        <br>
-        <div class="row justify-content-center">
-            <!--item start-->
-            <div class="event-item">
-                <div class="event-item-inner">
-                    <h3>Tiệc cưới nhà gái</h3>
-
-                    <span class="date"><i class="bi bi-calendar-check"></i> Chủ Nhật, 19/10/2025</span>  
-                    <span class="date">(15/08/2024 âm lịch)</span>
-                    <spam class="time"><i class="bi bi-alarm"></i> 17:30</spam>
-                    <br>
-                    <i class="bi-geo-alt-fill"> Tư gia nhà gái</i>
-                    <p> Xã An Thắng, Huyện An Lão, Thành phố Hải Phòng</p>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6">
-                        <img src="images/bando01.jpg" alt="Hình ảnh bản đồ">
-                        <br>
-                        </a>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6" target="_blank">
-                            Bấm để mở bản đồ
-                            </a>
-                    
-                    
-                    <img src="images/dish.png" class="icon-eat">
-                </div>
-            </div>
-            <!--item end-->
-             <!--item start-->
-             <div class="event-item">
-                <div class="event-item-inner">
-                    <h3>Tiệc cưới nhà trai</h3>
-                    <span class="date"><i class="bi bi-calendar-check"></i> Chủ Nhật, 19/10/2025</span>
-                    <span class="date">(27/08/2025 âm lịch)</span>
-                    <spam class="time"><i class="bi bi-alarm"></i> 10:30</spam>
-                    <br>
-                    <i class="bi-geo-alt-fill"> Tư gia nhà trai</i>
-                    <p>SN 57, Đường Cầm Bá Thước, Huyện Thường Xuân, Tỉnh Thanh Hóa</p>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6">
-                        <img src="images/bando01.jpg" alt="Hình ảnh bản đồ">
-                        <br>
-                        </a>
-                    <a href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6" target="_blank">
-                            Bấm để mở bản đồ
-                            </a>
-                    
-                    <img src="images/dish.png" class="icon-eat">
-                </div>
-            </div>
-            <!--item end-->
-        </div>
-
-
-
     </div>
 </section>
-<!--event section end-->
-<!--gallery section start-->
+
+<!-- Gallery section -->
 <section class="gallery-section" data-scroll-index="3">
     <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Album ảnh cưới</h2>
-            </div>
+        <div class="section-title"><h2>Album ảnh cưới</h2></div>
+        <div class="gallery-container">
+            <div class="gallery-box"><img src="images/anh1.jpg" alt="anh1" class="gallery-small-image"></div>
+            <div class="gallery-box"><img src="images/anhphong1.jpg" alt="anhphong1" class="gallery-small-image"></div>
+            <div class="gallery-box"><img src="images/anhphong2.jpg" alt="anhphong2" class="gallery-small-image"></div>
+            <div class="gallery-box"><img src="images/anhdeban.jpg" alt="anhdeban" class="gallery-small-image"></div>
+            <div class="gallery-box"><img src="images/anh2.jpg" alt="anh2" class="gallery-small-image"></div>
+            <div class="gallery-box"><img src="images/anh3.jpg" alt="anh3" class="gallery-small-image"></div>
+            <div class="gallery-box"><img src="images/anh4.jpg" alt="anh4" class="gallery-small-image"></div>
+            <div class="gallery-box"><img src="images/anh5.jpg" alt="anh5" class="gallery-small-image"></div>
         </div>
     </div>
-            <!--gallery item start-->
-            <div class="gallery-container">
-                <div class="gallery-box">
-                    <img src="images/anh1.jpg" alt="anh1" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anhphong1.jpg" alt="anhphong1" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anhphong2.jpg" alt="anhphong2" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anhdeban.jpg" alt="anhdeban" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anh2.jpg" alt="anh2" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anh3.jpg" alt="anh3" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anh4.jpg" alt="anh4" class="gallery-small-image">
-                </div>
-                <div class="gallery-box">
-                    <img src="images/anh5.jpg" alt="anh5" class="gallery-small-image">
-                </div>
-        </div>       
-            <!--gallery item end-->
 </section>
-<!--gallery section end-->
-<!--rsvp section start-->
+
+<!-- RSVP section -->
 <section class="rsvp-section" data-scroll-index="4">
     <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Xác nhận tham dự</h2>
-                <p>Vui lòng điền vào form này trước ngày 18/10/2025</p>
-            </div>
+        <div class="section-title">
+            <h2>Xác nhận tham dự</h2>
+            <p>Vui lòng điền vào form này trước ngày 18/10/2025</p>
         </div>
-        <div class="row">
-            <div class="rsvp-form">
-               <form class="form" id="myForm">
-    <div class="row">
-        <div class="input-group w50">
-            <input type="text" name="fullname" placeholder="Họ và tên" class="input-control" required="">
-        </div>
-        <div class="input-group w50">
-            <input type="text" name="email" placeholder="Số điện thoại" class="input-control" required="">
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-group w50">
-            <input type="text" name="guest_count" placeholder="Số lượng tham dự" class="input-control" required="">
-        </div>
-        <div class="input-group w50">
-            <select name="guest_slide" class="input-control" required="">
-                <option value="Khách nhà trai">Khách nhà trai</option>
-                <option value="Khách nhà gái">Khách nhà gái</option>
-                <option value="Khách nhà trai">Cả hai nhà</option>
-            </select>                       
+        <div class="rsvp-form">
+            <form class="form" id="myForm">
+                <div class="row">
+                    <div class="input-group">
+                        <input type="text" name="name" id="name" required placeholder="Tên của bạn">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" name="guest" id="guest" required placeholder="Số người tham dự">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group">
+                        <input type="text" name="message" id="message" placeholder="Lời chúc mừng">
+                    </div>
+                </div>
+                <button type="submit" class="btn">Gửi</button>
+            </form>
         </div>
     </div>
-    <div class="row">
-        <div class="input-group">
-            <select name="attendance" class="input-control" required="">
-                <option value="Xác nhận tham gia">Xác nhận tham gia</option>
-                <option value="Không tham gia được">Không tham gia được</option>
-            </select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-group">
-            <textarea name="wishes" placeholder="Lời chúc" class="input-control" required=""></textarea>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-group">
-            <button type="submit" class="btn-1">Gửi</button>
-        </div>
-    </div>    
-</form>
+</section>
 
-<!-- Phần thông báo -->
-<div id="responseMessage"></div>
+<!-- Gift section -->
+<section class="gift-section" data-scroll-index="5">
+    <div class="container">
+        <div class="section-title"><h2>Mừng cưới</h2></div>
+        <div class="gift-content">
+            <p>Quý khách có thể gửi tiền mừng cưới qua:</p>
+            <ul>
+                <li>Ngân hàng ACB: 123456789 - Nguyễn Minh Tuấn</li>
+                <li>Ngân hàng Vietcombank: 987654321 - Dương Đức Thắng</li>
+                <li>Hoặc liên hệ trực tiếp: 0934.346.889</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
+<!-- Footer -->
+<footer class="footer-section">
+    <div class="container">
+        <p>&copy; 2025 Đức Thắng & Minh Tuấn. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Script -->
 <script>
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Ngăn form gửi và chuyển trang
+  // ScrollIt configuration
+  $.scrollIt({
+    upKey: 38,             
+    downKey: 40,           
+    easing: 'swing',       
+    scrollTime: 600,       
+    activeClass: 'active', 
+    onPageChange: null,    
+    topOffset: -70         
+  });
 
-    const formData = new FormData(this);
+  // Hamburger menu toggle
+  $('.hamburger-btn').click(function() {
+    $(this).toggleClass('active');
+    $('.nav').toggleClass('active');
+  });
 
-    fetch('https://script.google.com/macros/s/AKfycbz_Ro9z-vc8SELF4ODta7EJJ99hRSfV9XJf4Sb2oenvaWPGq5PlYNuWBv8l7kbzAMM/exec', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(result => {
-        document.getElementById('responseMessage').textContent = 'Cảm ơn lời chúc của bạn. Sự hiện diện của bạn là niềm vinh dự của gia đình chúng tôi!';
-        document.getElementById('myForm').reset(); // Xóa dữ liệu trong form (tùy chọn)
-    })
-    .catch(error => {
-        document.getElementById('responseMessage').textContent = 'Có lỗi xảy ra, vui lòng thử lại!';
-        console.error('Error:', error);
-    });
-});
+  // Close menu on click link
+  $('.nav ul li a').click(function() {
+    $('.nav').removeClass('active');
+    $('.hamburger-btn').removeClass('active');
+  });
 </script>
 
-<!-- Phần thông báo -->
-<div id="responseMessage"></div>
-
-
-            </div>
-        </div>
-    </div>
-</section>
-<!--rsvp section end-->
-<!--gift section start-->
-<section class="gifts-section" data-scroll-index="5">
-    <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Mừng cưới</h2>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <!--item start-->
-            <div class="gifts-item">
-                <div class="gifts-item-inner">
-                    <h3>Mừng cưới chú rể</h3>
-                    <span class="date">Dương Đức Thắng</span>
-                    <spam class="time">Techcombank</spam>
-                    <p>19033036669019</p>
-                    <img src="images/qrchure.jpg" alt="gifts">
-                    <i class="bi-box2-heart-fill"></i>
-                </div>
-            </div>
-            <!--item end-->
-             <!--item start-->
-             <div class="gifts-item">
-                <div class="gifts-item-inner">
-                    <h3>Mừng cưới cô dâu</h3>
-                    <span class="date">Nguyễn Minh Tuấn</span>
-                    <spam class="time">Techcombank</spam>
-                    <p>19033036669019</p>
-                    <img src="images/qrcodau.jpg" alt="gifts">
-                    <i class="bi-box2-heart-fill"></i>
-                </div>
-            </div>
-            <!--item end-->
-        </div>
-    </div>
-</section>
-
-<!--gift section end-->
-
-<footer>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col text-center">
-          <small class="block">©2024 Designed by Thangkeky.</small>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-<!--audio start-->
-<audio id="myAudio" loop="loop" src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mp3"></audio>
-<i class="bi-music-note-beamed pause"></i>
-<!--audio end-->
-
-<!--scroll-->
-<script src="js/scrollIt.min.js"></script>
-
-
-
 </body>
-
-    
+</html>
