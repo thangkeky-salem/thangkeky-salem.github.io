@@ -20,8 +20,6 @@
     html,body{margin:0;padding:0;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
-
-    /* Header */
     .header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #f1f1f1}
     .nav-inner{max-width:var(--container);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
     .brand{font-family:Playfair Display,serif;font-size:22px;font-weight:700;color:var(--primary)}
@@ -29,83 +27,43 @@
     .menu a{padding:10px 12px;border-radius:999px}
     .menu a.active,.menu a:hover{background:var(--rose-2)}
     .hamb{display:none;font-size:24px;cursor:pointer}
-
-    /* Hero */
     .hero{position:relative;min-height:80vh;display:grid;place-items:center;background:url('images/anh6.jpg') center/cover no-repeat}
     .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.35))}
     .hero .wrap{position:relative;z-index:1;text-align:center;color:#fff;padding:40px 16px}
     .hero .names{font-family:Playfair Display,serif;font-size:46px;line-height:1.2;margin:6px 0}
     .hero p.lead{opacity:.95;font-size:18px;margin:6px 0 18px}
-    .date-badge{display:inline-block;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.2);backdrop-filter:blur(2px);border:1px solid rgba(255,255,255,.35)}
+    .date-badge{display:inline-block;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35)}
     .countdown{display:flex;gap:12px;justify-content:center;margin-top:18px}
     .cd-box{min-width:70px;padding:10px 8px;border-radius:12px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35)}
     .cd-box .num{font-size:24px;font-weight:700}
     .cd-box .lbl{font-size:12px;opacity:.9}
-
-    /* Sections */
     section{padding:72px 16px}
     .container{max-width:var(--container);margin:auto}
     .section-title{font-family:Playfair Display,serif;font-size:32px;text-align:center;margin:0 0 24px;color:var(--dark)}
     .muted{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 32px}
-
-    /* Couple */
     .couple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-    .circle{width:220px;height:220px;border-radius:50%;border:6px solid var(--rose);overflow:hidden;margin:0 auto;box-shadow:var(--shadow);transition:all .3s ease}
+    .circle{width:200px;height:200px;border-radius:50%;overflow:hidden;border:6px solid var(--rose);margin:auto;box-shadow:var(--shadow)}
     .circle img{width:100%;height:100%;object-fit:cover}
-    .circle:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(238,183,199,0.8)}
-    .card h3{margin:4px 0 6px;font-size:20px}
-    .meta{display:flex;align-items:center;gap:10px;color:var(--muted)}
-
-    /* Timeline */
     .timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    .event{border-left:4px solid var(--primary);padding:12px 16px;border-radius:10px;background:#fff;box-shadow:var(--shadow)}
-    .event h4{margin:2px 0 6px}
-    .event .when{color:var(--muted);font-size:14px}
-
-    /* Gallery */
+    .event{padding:16px;border-radius:16px;background:#fff;box-shadow:var(--shadow);border:1px solid #eee}
+    .event h4{margin:6px 0;font-size:20px;color:var(--primary)}
+    .event .when{color:var(--muted);font-size:14px;margin-bottom:6px}
+    .event .meta{color:var(--text);margin-bottom:10px}
     .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .grid img{border-radius:12px;aspect-ratio:1/1;object-fit:cover;cursor:pointer}
-
-    /* RSVP */
+    .grid img{border-radius:12px;aspect-ratio:1/1;object-fit:cover}
     form{display:grid;gap:12px}
     .row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     input,select,textarea{width:100%;padding:12px 14px;border:1px solid #e6e6e6;border-radius:12px;font:inherit}
     textarea{min-height:110px}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--primary);color:#fff;border:none;cursor:pointer}
     .btn:disabled{opacity:.6;cursor:not-allowed}
-
-    /* Gifts */
-    .gift-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .gift{display:grid;gap:8px;justify-items:center;padding:16px;border:1px solid #eee;border-radius:16px;background:#fff;box-shadow:var(--shadow)}
-    .gift img{max-width:220px;border-radius:12px}
-
-    /* Footer */
     footer{padding:28px 16px;border-top:1px solid #f1f1f1;text-align:center;color:var(--muted)}
-
-    /* Floating buttons */
     .music-btn,.top-btn{position:fixed;right:16px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow);z-index:1001;background:#fff;color:var(--primary);border:1px solid #eee;cursor:pointer}
     .music-btn{bottom:78px}
     .top-btn{bottom:20px;opacity:0;pointer-events:none;transition:opacity .2s}
     .top-btn.show{opacity:1;pointer-events:auto}
-
-    /* Lightbox */
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}
-    .lightbox img{max-width:92vw;max-height:86vh;border-radius:12px}
-    .lightbox:target{display:flex}
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .timeline{grid-template-columns:1fr}
-      .couple{grid-template-columns:1fr}
-      .gift-grid{grid-template-columns:1fr}
-    }
-    @media (max-width: 760px){
-      .menu{display:none}
-      .hamb{display:block}
-      .menu.open{position:absolute;left:0;right:0;top:60px;background:#fff;border-bottom:1px solid #eee;display:flex;flex-direction:column}
-      .hero .names{font-size:34px}
-    }
+    @media (max-width: 900px){.grid{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:1fr}.couple{grid-template-columns:1fr}}
+    @media (max-width: 760px){.menu{display:none}.hamb{display:block}.menu.open{position:absolute;left:0;right:0;top:60px;background:#fff;border-bottom:1px solid #eee;display:flex;flex-direction:column}.hero .names{font-size:34px}}
   </style>
 </head>
 <body>
@@ -125,7 +83,7 @@
     </div>
   </header>
 
-  <!-- Hero with Countdown -->
+  <!-- Hero -->
   <section class="hero" id="home">
     <div class="wrap">
       <p class="lead">Welcome to our wedding</p>
@@ -146,32 +104,34 @@
       <div>
         <div class="circle"><img src="images/codau.jpg" alt="Cô dâu"></div>
         <h3 style="text-align:center;margin-top:12px">Nguyễn Minh Tuấn</h3>
-        <div class="meta" style="justify-content:center"><i class="bi bi-geo-alt-fill"></i> Xã An Thắng, An Lão, Hải Phòng</div>
-        <p style="text-align:center"><a href="https://www.facebook.com/thang.keky/" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></p>
+        <div class="meta" style="text-align:center"><i class="bi bi-geo-alt-fill"></i> Xã An Thắng, An Lão, Hải Phòng</div>
       </div>
       <div>
         <div class="circle"><img src="images/chure.jpg" alt="Chú rể"></div>
         <h3 style="text-align:center;margin-top:12px">Dương Đức Thắng</h3>
-        <div class="meta" style="justify-content:center"><i class="bi bi-geo-alt-fill"></i> SN 57, Đường Cầm Bá Thước, Thường Xuân, Thanh Hóa</div>
-        <p style="text-align:center"><a href="https://www.facebook.com/profile.php?id=100037015563266" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></p>
+        <div class="meta" style="text-align:center"><i class="bi bi-geo-alt-fill"></i> Thường Xuân, Thanh Hóa</div>
       </div>
     </div>
   </section>
 
   <!-- Events -->
-  <section id="events" style="background:linear-gradient(180deg,#fff, #fff 40%, #fdf3f6)">
+  <section id="events" style="background:#fff7fa">
     <div class="container">
       <h2 class="section-title">Our Wedding</h2>
       <div class="timeline">
         <div class="event">
           <h4>LỄ VU QUY</h4>
-          <div class="when"><i class="bi bi-calendar-heart"></i> Chủ Nhật, 19/10/2025 • 7:00–9:00</div>
-          <div class="meta"><i class="bi bi-geo-alt-fill"></i> Tư gia nhà gái – Xã An Thắng, An Lão, Hải Phòng</div>
+          <div class="when"><i class="bi bi-calendar-heart"></i> 19/10/2025 • 7:00</div>
+          <div class="meta"><i class="bi bi-geo-alt-fill"></i> Tư gia nhà gái – Hải Phòng</div>
+          <img src="images/bando.jpg" alt="Bản đồ Lễ Vu Quy">
+          <p><a class="btn" target="_blank" href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6"><i class="bi bi-geo"></i> Mở bản đồ</a></p>
         </div>
         <div class="event">
           <h4>LỄ THÀNH HÔN</h4>
-          <div class="when"><i class="bi bi-calendar-heart"></i> Thứ Hai, 20/10/2025 • 10:30–15:00</div>
-          <div class="meta"><i class="bi bi-geo-alt-fill"></i> SN 57, Đường Cầm Bá Thước, Thường Xuân, Thanh Hóa</div>
+          <div class="when"><i class="bi bi-calendar-heart"></i> 20/10/2025 • 10:30</div>
+          <div class="meta"><i class="bi bi-geo-alt-fill"></i> Tư gia nhà trai – Thanh Hóa</div>
+          <img src="images/bando01.jpg" alt="Bản đồ Lễ Thành Hôn">
+          <p><a class="btn" target="_blank" href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6"><i class="bi bi-geo"></i> Mở bản đồ</a></p>
         </div>
       </div>
     </div>
@@ -182,49 +142,30 @@
     <div class="container">
       <h2 class="section-title">Album ảnh cưới</h2>
       <div class="grid">
-        <a href="#pic1"><img src="images/anh1.jpg" alt="Ảnh 1"></a>
-        <a href="#pic2"><img src="images/anh2.jpg" alt="Ảnh 2"></a>
-        <a href="#pic3"><img src="images/anh3.jpg" alt="Ảnh 3"></a>
-        <a href="#pic4"><img src="images/anh4.jpg" alt="Ảnh 4"></a>
-        <a href="#pic5"><img src="images/anh5.jpg" alt="Ảnh 5"></a>
-        <a href="#pic6"><img src="images/anh6.jpg" alt="Ảnh 6"></a>
-        <a href="#pic7"><img src="images/anh7.jpg" alt="Ảnh 7"></a>
-        <a href="#pic8"><img src="images/anh8.jpg" alt="Ảnh 8"></a>
+        <img src="images/anh1.jpg" alt="">
+        <img src="images/anh2.jpg" alt="">
+        <img src="images/anh3.jpg" alt="">
+        <img src="images/anh4.jpg" alt="">
+        <img src="images/anh5.jpg" alt="">
+        <img src="images/anh6.jpg" alt="">
+        <img src="images/anh7.jpg" alt="">
+        <img src="images/anh8.jpg" alt="">
       </div>
     </div>
   </section>
 
-  <!-- Lightbox for gallery -->
-  <div id="pic1" class="lightbox"><a href="#gallery"><img src="images/anh1.jpg"></a></div>
-  <div id="pic2" class="lightbox"><a href="#gallery"><img src="images/anh2.jpg"></a></div>
-  <div id="pic3" class="lightbox"><a href="#gallery"><img src="images/anh3.jpg"></a></div>
-  <div id="pic4" class="lightbox"><a href="#gallery"><img src="images/anh4.jpg"></a></div>
-  <div id="pic5" class="lightbox"><a href="#gallery"><img src="images/anh5.jpg"></a></div>
-  <div id="pic6" class="lightbox"><a href="#gallery"><img src="images/anh6.jpg"></a></div>
-  <div id="pic7" class="lightbox"><a href="#gallery"><img src="images/anh7.jpg"></a></div>
-  <div id="pic8" class="lightbox"><a href="#gallery"><img src="images/anh8.jpg"></a></div>
-
   <!-- RSVP -->
-  <section id="rsvp" style="background:#fff7fa">
+  <section id="rsvp">
     <div class="container">
       <h2 class="section-title">Xác nhận tham dự</h2>
-      <p class="muted">Vui lòng điền vào form này trước ngày 18/10/2025</p>
       <form id="rsvpForm">
         <div class="row">
           <input name="fullname" placeholder="Họ và tên" required />
           <input name="phone" placeholder="Số điện thoại" required />
         </div>
-        <div class="row">
-          <input name="guest_count" placeholder="Số lượng tham dự" required />
-          <select name="side" required>
-            <option value="Khách nhà trai">Khách nhà trai</option>
-            <option value="Khách nhà gái">Khách nhà gái</option>
-            <option value="Cả hai nhà">Cả hai nhà</option>
-          </select>
-        </div>
         <select name="attendance" required>
-          <option value="Xác nhận tham gia">Xác nhận tham gia</option>
-          <option value="Không tham gia được">Không tham gia được</option>
+          <option value="Xác nhận">Xác nhận tham gia</option>
+          <option value="Không tham gia">Không tham gia</option>
         </select>
         <textarea name="wishes" placeholder="Lời chúc"></textarea>
         <button class="btn" type="submit" id="submitBtn"><i class="bi bi-send"></i> Gửi</button>
@@ -237,101 +178,41 @@
   <section id="gifts">
     <div class="container">
       <h2 class="section-title">Mừng cưới</h2>
-      <div class="gift-grid">
-        <div class="gift">
-          <h3>Mừng cưới chú rể</h3>
-          <div class="muted">Dương Đức Thắng • Techcombank</div>
-          <div class="muted">STK: <strong>19033036669019</strong></div>
-          <img src="images/qrchure.jpg" alt="QR chú rể">
-        </div>
-                <div class="gift">
-          <h3>Mừng cưới cô dâu</h3>
-          <div class="muted">Nguyễn Minh Tuấn • Vietcombank</div>
-          <div class="muted">STK: <strong>0123456789</strong></div>
-          <img src="images/qrcodau.jpg" alt="QR cô dâu">
-        </div>
+      <p class="muted">Dùng QR hoặc số tài khoản để mừng cưới</p>
+      <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+        <div><img src="images/qrchure.jpg" alt="QR chú rể" width="220"></div>
+        <div><img src="images/qrcodau.jpg" alt="QR cô dâu" width="220"></div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>💖 Trân trọng kính mời quý khách tới chung vui cùng chúng tôi 💖</p>
-    <p>© 2025 Đức Thắng ❤ Minh Tuấn</p>
-  </footer>
+  <footer>©2025 Đức Thắng ❤ Minh Tuấn</footer>
 
-  <!-- Audio & Floating Buttons -->
-  <audio id="bgm" autoplay loop>
-    <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg">
-    Trình duyệt của bạn không hỗ trợ phát nhạc.
+  <!-- Audio -->
+  <audio id="bgm" preload="auto" loop>
+    <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg" />
   </audio>
-  <button id="musicBtn" class="music-btn"><i class="bi bi-music-note-beamed"></i></button>
-  <button id="topBtn" class="top-btn"><i class="bi bi-arrow-up"></i></button>
+  <button class="music-btn" id="musicBtn" title="Phát/Dừng nhạc"><i class="bi bi-music-note-beamed"></i></button>
+  <button class="top-btn" id="topBtn" title="Lên đầu trang"><i class="bi bi-arrow-up"></i></button>
 
-  <!-- Scripts -->
   <script>
-    const menu=document.getElementById("menu");
-    const hamb=document.getElementById("hamb");
-    hamb.addEventListener("click",()=>menu.classList.toggle("open"));
-
-    // Cuộn mượt
-    const header=document.querySelector(".header");
-    const links=document.querySelectorAll("[data-link]");
-    links.forEach(l=>l.addEventListener("click",e=>{
-      e.preventDefault();
-      menu.classList.remove("open");
-      const target=document.querySelector(l.getAttribute("href"));
-      const y=target.getBoundingClientRect().top+window.scrollY-header.offsetHeight;
-      window.scrollTo({top:y,behavior:"smooth"});
-    }));
-
-    // Active link
-    const sections=document.querySelectorAll("section");
-    window.addEventListener("scroll",()=>{
-      let cur="";
-      sections.forEach(s=>{if(window.scrollY>=s.offsetTop-header.offsetHeight-60)cur=s.id});
-      links.forEach(l=>l.classList.remove("active"));
-      if(cur)document.querySelectorAll('[href="#'+cur+'"]').forEach(l=>l.classList.add("active"));
-    });
-
-    // Back to top
-    const topBtn=document.getElementById("topBtn");
-    window.addEventListener("scroll",()=>{if(window.scrollY>300)topBtn.classList.add("show");else topBtn.classList.remove("show")});
-    topBtn.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-
-    // Countdown
-    const weddingDate=new Date("Oct 20, 2025 10:30:00").getTime();
-    setInterval(()=>{
-      const now=new Date().getTime();
-      const t=weddingDate-now;
-      if(t<0)return;
-      document.getElementById("dd").innerText=Math.floor(t/(1000*60*60*24));
-      document.getElementById("hh").innerText=Math.floor((t%(1000*60*60*24))/(1000*60*60));
-      document.getElementById("mm").innerText=Math.floor((t%(1000*60*60))/(1000*60));
-      document.getElementById("ss").innerText=Math.floor((t%(1000*60))/1000);
-    },1000);
-
-    // Music toggle
-    const bgm=document.getElementById("bgm");
-    const musicBtn=document.getElementById("musicBtn");
-    let playing=false;
-    musicBtn.addEventListener("click",()=>{
-      if(!playing){
-        bgm.play().then(()=>{playing=true;musicBtn.innerHTML='<i class="bi bi-pause-circle"></i>';});
-      }else{
-        bgm.pause();playing=false;musicBtn.innerHTML='<i class="bi bi-music-note-beamed"></i>';
-      }
-    });
-
-    // RSVP form
-    const rsvpForm=document.getElementById("rsvpForm");
-    const msg=document.getElementById("msg");
-    rsvpForm.addEventListener("submit",e=>{
-      e.preventDefault();
-      document.getElementById("submitBtn").disabled=true;
-      msg.innerText="Cảm ơn bạn đã gửi phản hồi!";
-    });
+    const hamb=document.getElementById('hamb'),menu=document.getElementById('menu');
+    hamb.addEventListener('click',()=>menu.classList.toggle('open'));
+    const header=document.querySelector('.header'),links=document.querySelectorAll('[data-link]');
+    function smoothTo(id){const el=document.querySelector(id);if(!el)return;const y=el.getBoundingClientRect().top+window.pageYOffset-header.offsetHeight-6;window.scrollTo({top:y,behavior:'smooth'});}
+    links.forEach(a=>{a.addEventListener('click',e=>{const href=a.getAttribute('href');if(href.startsWith('#')){e.preventDefault();smoothTo(href);menu.classList.remove('open');}});});
+    const sections=['#home','#couple','#events','#gallery','#rsvp','#gifts'].map(id=>document.querySelector(id));
+    function onScroll(){const pos=window.scrollY+header.offsetHeight+20;let current=sections[0].id;for(const s of sections){if(s&&pos>=s.offsetTop)current=s.id;}document.querySelectorAll('.menu a').forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});document.getElementById('topBtn').classList.toggle('show',window.scrollY>600);}
+    window.addEventListener('scroll',onScroll);onScroll();
+    const target=new Date('2025-10-20T10:30:00+07:00').getTime();
+    const dd=document.getElementById('dd'),hh=document.getElementById('hh'),mm=document.getElementById('mm'),ss=document.getElementById('ss');
+    setInterval(()=>{const now=Date.now();let d=Math.max(0,target-now);const days=Math.floor(d/86400000);d%=86400000;const hrs=Math.floor(d/3600000);d%=3600000;const mins=Math.floor(d/60000);d%=60000;const secs=Math.floor(d/1000);dd.textContent=days;hh.textContent=hrs;mm.textContent=mins;ss.textContent=secs;},1000);
+    document.getElementById('topBtn').addEventListener('click',()=>smoothTo('#home'));
+    const bgm=document.getElementById('bgm'),musicBtn=document.getElementById('musicBtn');let playing=false;
+    function toggleMusic(){if(!playing){bgm.play().then(()=>{playing=true;musicBtn.innerHTML='<i class="bi bi-pause-fill"></i>';}).catch(()=>{});}else{bgm.pause();playing=false;musicBtn.innerHTML='<i class="bi bi-play-fill"></i>';}};
+    musicBtn.addEventListener('click',toggleMusic);
+    const form=document.getElementById('rsvpForm');
+    form.addEventListener('submit',e=>{e.preventDefault();document.getElementById('submitBtn').disabled=true;document.getElementById('msg').innerText="Cảm ơn bạn đã xác nhận!";});
   </script>
 </body>
 </html>
-
