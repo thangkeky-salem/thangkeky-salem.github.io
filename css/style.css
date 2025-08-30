@@ -775,4 +775,23 @@ footer {
   height: 100%;
   object-fit: cover;
 }
+.card.circle {
+  width: 180px;             /* kích thước khung tròn */
+  height: 180px;
+  border-radius: 50%;       /* bo tròn */
+  border: 6px solid #eeb7c7; /* viền hồng */
+  overflow: hidden;         /* ẩn phần ảnh thừa */
+  margin: 0 auto;           /* căn giữa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(238,183,199,0.4); /* bóng hồng nhẹ */
+}
+
+.card.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ảnh che kín khung */
+}
+
 
