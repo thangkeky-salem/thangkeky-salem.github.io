@@ -17,7 +17,7 @@
       --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    html,body{margin:0;padding:0;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
 
@@ -56,8 +56,6 @@
       border-radius: 50%;
       overflow: hidden;
       border: 6px solid var(--rose);
-      position: relative;
-      text-align: center;
       box-shadow: var(--shadow);
       background: #fff;
     }
@@ -67,17 +65,6 @@
       object-fit: cover;
       border-radius: 50%;
     }
-    .card.circle .body {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      background: rgba(255,255,255,0.7);
-      border-radius: 0 0 50% 50%;
-    }
-    .card.circle h3{margin:4px 0;font-size:18px;color:var(--dark)}
-    .card.circle .meta{font-size:13px;color:var(--muted);margin-bottom:6px}
 
     /* Timeline */
     .timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
@@ -94,7 +81,7 @@
     .row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     input,select,textarea{width:100%;padding:12px 14px;border:1px solid #e6e6e6;border-radius:12px;font:inherit}
     textarea{min-height:110px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--primary);color:#fff;border:none;cursor:pointer}
     .btn:disabled{opacity:.6;cursor:not-allowed}
 
     /* Gifts */
@@ -111,7 +98,7 @@
     .top-btn{bottom:20px;opacity:0;pointer-events:none;transition:opacity .2s}
     .top-btn.show{opacity:1;pointer-events:auto}
 
-    /* Lightbox */
+    /* Lightbox (CSS target) */
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}
     .lightbox img{max-width:92vw;max-height:86vh;border-radius:12px}
     .lightbox:target{display:flex}
@@ -132,36 +119,6 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="nav-inner">
-      <a class="brand" href="#home" data-link>ĐT ❤ MT</a>
-      <nav class="menu" id="menu">
-        <a href="#home" data-link>Trang chủ</a>
-        <a href="#couple" data-link>Thông tin</a>
-        <a href="#events" data-link>Sự kiện</a>
-        <a href="#gallery" data-link>Album</a>
-        <a href="#rsvp" data-link>Tham dự</a>
-        <a href="#gifts" data-link>Mừng cưới</a>
-      </nav>
-      <div class="hamb" id="hamb"><i class="bi bi-list"></i></div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="wrap">
-      <p class="lead">Welcome to our wedding</p>
-      <div class="names">Đức Thắng &amp; Minh Tuấn</div>
-      <div class="date-badge"><i class="bi bi-calendar-heart"></i> 20/10/2025 • Thanh Hóa</div>
-      <div class="countdown" id="countdown">
-        <div class="cd-box"><div class="num" id="dd">--</div><div class="lbl">Ngày</div></div>
-        <div class="cd-box"><div class="num" id="hh">--</div><div class="lbl">Giờ</div></div>
-        <div class="cd-box"><div class="num" id="mm">--</div><div class="lbl">Phút</div></div>
-        <div class="cd-box"><div class="num" id="ss">--</div><div class="lbl">Giây</div></div>
-      </div>
-    </div>
-  </section>
 
   <!-- Couple -->
   <section id="couple">
@@ -169,29 +126,25 @@
       <h2 class="section-title">Cô dâu &amp; Chú rể</h2>
       <p class="muted">Sự hiện diện của quý vị là niềm vinh dự của gia đình chúng tôi.</p>
       <div class="couple">
-        <div class="card circle">
-          <img src="images/codau.jpg" alt="Cô dâu">
-          <div class="body">
-            <h3>Nguyễn Minh Tuấn</h3>
-            <div class="meta"><i class="bi bi-geo-alt-fill"></i> Xã An Thắng, An Lão, Hải Phòng</div>
-            <a href="https://www.facebook.com/thang.keky/" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a>
+        <div>
+          <div class="card circle">
+            <img src="images/codau.jpg" alt="Cô dâu">
           </div>
+          <h3 style="text-align:center;margin-top:12px">Nguyễn Minh Tuấn</h3>
+          <div class="meta" style="justify-content:center"><i class="bi bi-geo-alt-fill"></i> Xã An Thắng, An Lão, Hải Phòng</div>
+          <p style="text-align:center"><a href="https://www.facebook.com/thang.keky/" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></p>
         </div>
-        <div class="card circle">
-          <img src="images/chure.jpg" alt="Chú rể">
-          <div class="body">
-            <h3>Dương Đức Thắng</h3>
-            <div class="meta"><i class="bi bi-geo-alt-fill"></i> Thường Xuân, Thanh Hóa</div>
-            <a href="https://www.facebook.com/profile.php?id=100037015563266" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a>
+        <div>
+          <div class="card circle">
+            <img src="images/chure.jpg" alt="Chú rể">
           </div>
+          <h3 style="text-align:center;margin-top:12px">Dương Đức Thắng</h3>
+          <div class="meta" style="justify-content:center"><i class="bi bi-geo-alt-fill"></i> Thường Xuân, Thanh Hóa</div>
+          <p style="text-align:center"><a href="https://www.facebook.com/profile.php?id=100037015563266" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- (Các phần khác giữ nguyên)... -->
-
-  <!-- Audio -->
-  <audio id="bgm" loop>
-    <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg">
-  <
+</body>
+</html>
