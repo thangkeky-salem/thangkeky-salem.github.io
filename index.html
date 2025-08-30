@@ -17,11 +17,9 @@
       --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    html,body{margin:0;padding:0;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
-
-    /* Header */
     .header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #f1f1f1}
     .nav-inner{max-width:var(--container);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
     .brand{font-family:Playfair Display,serif;font-size:22px;font-weight:700;color:var(--primary)}
@@ -29,82 +27,43 @@
     .menu a{padding:10px 12px;border-radius:999px}
     .menu a.active,.menu a:hover{background:var(--rose-2)}
     .hamb{display:none;font-size:24px;cursor:pointer}
-
-    /* Hero */
     .hero{position:relative;min-height:80vh;display:grid;place-items:center;background:url('images/anh6.jpg') center/cover no-repeat}
     .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.35))}
     .hero .wrap{position:relative;z-index:1;text-align:center;color:#fff;padding:40px 16px}
     .hero .names{font-family:Playfair Display,serif;font-size:46px;line-height:1.2;margin:6px 0}
     .hero p.lead{opacity:.95;font-size:18px;margin:6px 0 18px}
-    .date-badge{display:inline-block;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.2);backdrop-filter:blur(2px);border:1px solid rgba(255,255,255,.35)}
+    .date-badge{display:inline-block;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35)}
     .countdown{display:flex;gap:12px;justify-content:center;margin-top:18px}
     .cd-box{min-width:70px;padding:10px 8px;border-radius:12px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35)}
     .cd-box .num{font-size:24px;font-weight:700}
     .cd-box .lbl{font-size:12px;opacity:.9}
-
-    /* Sections */
     section{padding:72px 16px}
     .container{max-width:var(--container);margin:auto}
     .section-title{font-family:Playfair Display,serif;font-size:32px;text-align:center;margin:0 0 24px;color:var(--dark)}
     .muted{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 32px}
-
-    /* Couple */
     .couple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-    .card{border:1px solid #eee;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;background:#fff}
-    .card .body{padding:16px}
-    .card h3{margin:4px 0 6px;font-size:20px}
-    .meta{display:flex;align-items:center;gap:10px;color:var(--muted)}
-
-    /* Timeline */
+    .circle{width:200px;height:200px;border-radius:50%;overflow:hidden;border:6px solid var(--rose);margin:auto;box-shadow:var(--shadow)}
+    .circle img{width:100%;height:100%;object-fit:cover}
     .timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    .event{border-left:4px solid var(--primary);padding:12px 16px;border-radius:10px;background:#fff;box-shadow:var(--shadow)}
-    .event h4{margin:2px 0 6px}
-    .event .when{color:var(--muted);font-size:14px}
-
-    /* Gallery */
+    .event{padding:16px;border-radius:16px;background:#fff;box-shadow:var(--shadow);border:1px solid #eee}
+    .event h4{margin:6px 0;font-size:20px;color:var(--primary)}
+    .event .when{color:var(--muted);font-size:14px;margin-bottom:6px}
+    .event .meta{color:var(--text);margin-bottom:10px}
     .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
     .grid img{border-radius:12px;aspect-ratio:1/1;object-fit:cover}
-
-    /* RSVP */
     form{display:grid;gap:12px}
     .row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     input,select,textarea{width:100%;padding:12px 14px;border:1px solid #e6e6e6;border-radius:12px;font:inherit}
     textarea{min-height:110px}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--primary);color:#fff;border:none;cursor:pointer}
     .btn:disabled{opacity:.6;cursor:not-allowed}
-
-    /* Gifts */
-    .gift-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .gift{display:grid;gap:8px;justify-items:center;padding:16px;border:1px solid #eee;border-radius:16px;background:#fff;box-shadow:var(--shadow)}
-    .gift img{max-width:220px;border-radius:12px}
-
-    /* Footer */
     footer{padding:28px 16px;border-top:1px solid #f1f1f1;text-align:center;color:var(--muted)}
-
-    /* Floating buttons */
     .music-btn,.top-btn{position:fixed;right:16px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow);z-index:1001;background:#fff;color:var(--primary);border:1px solid #eee;cursor:pointer}
     .music-btn{bottom:78px}
     .top-btn{bottom:20px;opacity:0;pointer-events:none;transition:opacity .2s}
     .top-btn.show{opacity:1;pointer-events:auto}
-
-    /* Lightbox (CSS target) */
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}
-    .lightbox img{max-width:92vw;max-height:86vh;border-radius:12px}
-    .lightbox:target{display:flex}
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .timeline{grid-template-columns:1fr}
-      .couple{grid-template-columns:1fr}
-      .gift-grid{grid-template-columns:1fr}
-    }
-    @media (max-width: 760px){
-      .menu{display:none}
-      .hamb{display:block}
-      .menu.open{position:absolute;left:0;right:0;top:60px;background:#fff;border-bottom:1px solid #eee;display:flex;flex-direction:column}
-      .hero .names{font-size:34px}
-    }
+    @media (max-width: 900px){.grid{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:1fr}.couple{grid-template-columns:1fr}}
+    @media (max-width: 760px){.menu{display:none}.hamb{display:block}.menu.open{position:absolute;left:0;right:0;top:60px;background:#fff;border-bottom:1px solid #eee;display:flex;flex-direction:column}.hero .names{font-size:34px}}
   </style>
 </head>
 <body>
@@ -128,7 +87,7 @@
   <section class="hero" id="home">
     <div class="wrap">
       <p class="lead">Welcome to our wedding</p>
-      <div class="names">Đức Thắng &amp; Minh Tuấn</div>
+      <div class="names">Đức Thắng 💕 Minh Tuấn</div>
       <div class="date-badge"><i class="bi bi-calendar-heart"></i> 20/10/2025 • Thanh Hóa</div>
       <div class="countdown" id="countdown">
         <div class="cd-box"><div class="num" id="dd">--</div><div class="lbl">Ngày</div></div>
@@ -140,121 +99,146 @@
   </section>
 
   <!-- Couple -->
-  <section id="couple">
-    <div class="container">
-      <h2 class="section-title">Cô dâu &amp; Chú rể</h2>
-      <p class="muted">Sự hiện diện của quý vị là niềm vinh dự của gia đình chúng tôi.</p>
-      <div class="couple">
-        <div class="card">
-          <img src="images/codau.jpg" alt="Cô dâu">
-          <div class="body">
-            <h3>Nguyễn Minh Tuấn</h3>
-            <div class="meta"><i class="bi bi-geo-alt-fill"></i> Xã An Thắng, An Lão, Hải Phòng</div>
-            <a href="https://www.facebook.com/thang.keky/" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a>
-          </div>
+<section id="couple" style="background:#f7f7f7;padding:80px 0;">
+  <div class="container" style="max-width:1000px;margin:auto;">
+    <h2 style="text-align:center;color:#FF1493;font-family:'Playfair Display',serif;font-size:36px;margin-bottom:40px;">About Us</h2>
+    <div class="couple-box" style="display:flex;align-items:center;justify-content:center;gap:60px;flex-wrap:wrap;position:relative;">
+      
+      <!-- Cô dâu -->
+      <div class="person" style="flex:1;min-width:280px;text-align:center;">
+        <div style="width:220px;height:220px;border:6px solid #ff7eb9;border-radius:50%;overflow:hidden;margin:0 auto;">
+          <img src="images/codau.jpg" alt="Cô dâu" style="width:100%;height:100%;object-fit:cover;">
         </div>
-        <div class="card">
-          <img src="images/chure.jpg" alt="Chú rể">
-          <div class="body">
-            <h3>Dương Đức Thắng</h3>
-            <div class="meta"><i class="bi bi-geo-alt-fill"></i> Thường Xuân, Thanh Hóa</div>
-            <a href="https://www.facebook.com/profile.php?id=100037015563266" class="btn" target="_blank"><i class="bi bi-facebook"></i> Facebook</a>
-          </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:#ff5ca2;margin:18px 0 10px;">Nguyễn Minh Tuấn</h3>
+        <p><a href="https://www.facebook.com/thang.keky/" target="_blank" style="display:inline-block;font-size:20px;color:#ff5ca2;"><i class="bi bi-facebook"></i></a></p>
+        <p style="margin:4px 0;color:#444;">Bố: Nguyễn Minh Hùng</p>
+        <p style="margin:4px 0;color:#444;">Mẹ: Hoàng Thị Thương</p>
+        <p style="margin-top:8px;font-size:15px;color:#000;"><i class="bi bi-geo-alt-fill"></i> Xã An Thắng, An Lão, Hải Phòng</p>
+      </div>
+
+      <!-- Icon trái tim ở giữa -->
+      <div class="heart-divider" style="position:relative;min-width:20px;">
+        <div style="width:1px;height:100%;background:#ddd;position:absolute;left:50%;top:0;"></div>
+        <div style="position:relative;z-index:1;background:#f7f7f7;padding:10px;border-radius:50%;margin:auto;display:flex;align-items:center;justify-content:center;width:40px;height:40px;color:#ff5ca2;font-size:20px;">
+          <i class="bi bi-heart-fill"></i>
         </div>
       </div>
+
+      <!-- Chú rể -->
+      <div class="person" style="flex:1;min-width:280px;text-align:center;">
+        <div style="width:220px;height:220px;border:6px solid #ff7eb9;border-radius:50%;overflow:hidden;margin:0 auto;">
+          <img src="images/chure.jpg" alt="Chú rể" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:#ff5ca2;margin:18px 0 10px;">Dương Đức Thắng</h3>
+        <p><a href="https://www.facebook.com/thang.keky/" target="_blank" style="display:inline-block;font-size:20px;color:#ff5ca2;"><i class="bi bi-facebook"></i></a></p>
+        <p style="margin:4px 0;color:#444;">Bố: Dương Đức Thụ</p>
+        <p style="margin:4px 0;color:#444;">Mẹ: Lê Thị Nhưng</p>
+        <p style="margin-top:8px;font-size:15px;color:#000;"><i class="bi bi-geo-alt-fill"></i> SN 57, Đường Cầm Bá Thước, Thường Xuân, Thanh Hóa</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Events -->
-  <section id="events" style="background:linear-gradient(180deg,#fff, #fff 40%, #fdf3f6)">
-    <div class="container">
-      <h2 class="section-title">Our Wedding</h2>
-      <div class="timeline">
-        <div class="event">
-          <h4>LỄ VU QUY</h4>
-          <div class="when"><i class="bi bi-calendar-heart"></i> Chủ Nhật, 19/10/2025 (27/08/ÂL) • 7:00–9:00</div>
-          <div class="meta"><i class="bi bi-geo-alt-fill"></i> Tư gia nhà gái – Xã An Thắng, An Lão, Hải Phòng</div>
-          <p><a class="btn" target="_blank" href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6"><i class="bi bi-geo"></i> Mở bản đồ</a></p>
-        </div>
-        <div class="event">
-          <h4>LỄ THÀNH HÔN</h4>
-          <div class="when"><i class="bi bi-calendar-heart"></i> Thứ Hai, 20/10/2025 (29/08/ÂL) • 10:30–15:00</div>
-          <div class="meta"><i class="bi bi-geo-alt-fill"></i> SN 57, Đường Cầm Bá Thước, Thường Xuân, Thanh Hóa</div>
-          <p><a class="btn" target="_blank" href="https://maps.app.goo.gl/DUnovsWNxK4MDC4h6"><i class="bi bi-geo"></i> Mở bản đồ</a></p>
-        </div>
-        <div class="event">
-          <h4>Tiệc cưới nhà gái</h4>
-          <div class="when"><i class="bi bi-calendar-check"></i> 19/10/2025 • 17:30</div>
-          <div class="meta"><i class="bi bi-geo-alt-fill"></i> Tư gia nhà gái</div>
-        </div>
-        <div class="event">
-          <h4>Tiệc cưới nhà trai</h4>
-          <div class="when"><i class="bi bi-calendar-check"></i> 19/10/2025 • 10:30</div>
-          <div class="meta"><i class="bi bi-geo-alt-fill"></i> Tư gia nhà trai – Thường Xuân, Thanh Hóa</div>
-        </div>
+<section id="events" style="background:#ff7eb9;padding:80px 0;">
+  <div class="container" style="max-width:1100px;margin:auto;">
+    <h2 style="text-align:center;color:#fff;font-family:'Playfair Display',serif;font-size:36px;margin-bottom:40px;">Our Wedding</h2>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;">
+      
+      <!-- LỄ VU QUY -->
+      <div style="background:#fff;border:3px solid #ff7eb9;border-radius:12px;padding:20px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ff4f92;margin-bottom:10px;">LỄ VU QUY</h3>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-calendar-heart"></i> Thứ Bảy, 19/10/2025 <br> (27/08 Âm lịch)</div>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-clock"></i> 07:00 – 09:00</div>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-geo-alt-fill"></i> Tư gia nhà gái – An Thắng, An Lão, Hải Phòng</div>
+        <img src="images/bando.jpg" alt="Bản đồ" style="width:100%;border-radius:8px;margin:10px 0;">
+        <a href="https://maps.app.goo.gl/FN92P8umzewFEpYSA" target="_blank" style="color:#0066cc;">Bấm để mở bản đồ</a>
+        <div style="margin-top:10px;font-size:24px;color:#ff4f92;"><i class="bi bi-heart-fill"></i></div>
+      </div>
+      
+      <!-- LỄ THÀNH HÔN -->
+      <div style="background:#fff;border:3px solid #ff7eb9;border-radius:12px;padding:20px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ff4f92;margin-bottom:10px;">LỄ THÀNH HÔN</h3>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-calendar-heart"></i> Chủ Nhật, 20/10/2025 <br> (28/08 Âm lịch)</div>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-clock"></i> 10:30 – 15:00</div>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-geo-alt-fill"></i> SN 57, Đường Cầm Bá Thước, Thường Xuân, Thanh Hóa</div>
+        <img src="images/bando01.jpg" alt="Bản đồ" style="width:100%;border-radius:8px;margin:10px 0;">
+        <a href="https://maps.app.goo.gl/v2DP4YzBQJ4vxMSs5" target="_blank" style="color:#0066cc;">Bấm để mở bản đồ</a>
+        <div style="margin-top:10px;font-size:24px;color:#ff4f92;"><i class="bi bi-gift-fill"></i></div>
+      </div>
+      
+      <!-- TIỆC CƯỚI NHÀ GÁI -->
+      <div style="background:#fff;border:3px solid #ff7eb9;border-radius:12px;padding:20px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ff4f92;margin-bottom:10px;">TIỆC CƯỚI NHÀ GÁI</h3>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-calendar-heart"></i> Thứ Bảy, 18/10/2025 (26/08 Âm lịch)</div>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-clock"></i> 17:30</div>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-geo-alt-fill"></i> Tư gia nhà gái – An Thắng, An Lão, Hải Phòng</div>
+        <img src="images/bando.jpg" alt="Bản đồ" style="width:100%;border-radius:8px;margin:10px 0;">
+        <a href="https://maps.app.goo.gl/FN92P8umzewFEpYSA" target="_blank" style="color:#0066cc;">Bấm để mở bản đồ</a>
+        <div style="margin-top:10px;font-size:24px;color:#ff4f92;"><i class="bi bi-cake2-fill"></i></div>
+      </div>
+      
+      <!-- TIỆC CƯỚI NHÀ TRAI -->
+      <div style="background:#fff;border:3px solid #ff7eb9;border-radius:12px;padding:20px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <h3 style="color:#ff4f92;margin-bottom:10px;">TIỆC CƯỚI NHÀ TRAI</h3>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-calendar-heart"></i> Chủ Nhật, 20/10/2025 (28/08 Âm lịch)</div>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-clock"></i> 10:30</div>
+        <div style="color:#444;margin-bottom:6px;"><i class="bi bi-geo-alt-fill"></i> SN 57, Đường Cầm Bá Thước, Thường Xuân, Thanh Hóa</div>
+        <img src="images/bando01.jpg" alt="Bản đồ" style="width:100%;border-radius:8px;margin:10px 0;">
+        <a href="https://maps.app.goo.gl/v2DP4YzBQJ4vxMSs5" target="_blank" style="color:#0066cc;">Bấm để mở bản đồ</a>
+        <div style="margin-top:10px;font-size:24px;color:#ff4f92;"><i class="bi bi-cup-straw"></i></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Gallery -->
   <section id="gallery">
     <div class="container">
       <h2 class="section-title">Album ảnh cưới</h2>
       <div class="grid">
-        <!-- Replace images 1..8 -->
-        <a href="#pic1"><img src="images/anh1.jpg" alt="Ảnh 1"></a>
-        <a href="#pic2"><img src="images/anh2.jpg" alt="Ảnh 2"></a>
-        <a href="#pic3"><img src="images/anh3.jpg" alt="Ảnh 3"></a>
-        <a href="#pic4"><img src="images/anh4.jpg" alt="Ảnh 4"></a>
-        <a href="#pic5"><img src="images/anh5.jpg" alt="Ảnh 5"></a>
-        <a href="#pic6"><img src="images/anhphong1.jpg" alt="Ảnh 6"></a>
-        <a href="#pic7"><img src="images/anhphong2.jpg" alt="Ảnh 7"></a>
-        <a href="#pic8"><img src="images/anhdeban.jpg" alt="Ảnh 8"></a>
+        <img src="images/anh1.jpg" alt="">
+        <img src="images/anh2.jpg" alt="">
+        <img src="images/anh3.jpg" alt="">
+        <img src="images/anh4.jpg" alt="">
+        <img src="images/anh5.jpg" alt="">
+        <img src="images/anh6.jpg" alt="">
+        <img src="images/anh7.jpg" alt="">
+        <img src="images/anh8.jpg" alt="">
       </div>
     </div>
-
-    <!-- CSS-only Lightbox targets -->
-    <div id="pic1" class="lightbox"><a href="#gallery" title="Đóng"><img src="images/anh1.jpg" alt=""></a></div>
-    <div id="pic2" class="lightbox"><a href="#gallery" title="Đóng"><img src="images/anh2.jpg" alt=""></a></div>
-    <div id="pic3" class="lightbox"><a href="#gallery" title="Đóng"><img src="images/anh3.jpg" alt=""></a></div>
-    <div id="pic4" class="lightbox"><a href="#gallery" title="Đóng"><img src="images/anh4.jpg" alt=""></a></div>
-    <div id="pic5" class="lightbox"><a href="#gallery" title="Đóng"><img src="images/anh5.jpg" alt=""></a></div>
-    <div id="pic6" class="lightbox"><a href="#gallery" title="Đóng"><img src="images/anhphong1.jpg" alt=""></a></div>
-    <div id="pic7" class="lightbox"><a href="#gallery" title="Đóng"><img src="images/anhphong2.jpg" alt=""></a></div>
-    <div id="pic8" class="lightbox"><a href="#gallery" title="Đóng"><img src="images/anhdeban.jpg" alt=""></a></div>
   </section>
 
   <!-- RSVP -->
-  <section id="rsvp" style="background:#fff7fa">
-    <div class="container">
-      <h2 class="section-title">Xác nhận tham dự</h2>
-      <p class="muted">Vui lòng điền vào form này trước ngày 18/10/2025</p>
-      <form id="rsvpForm">
-        <div class="row">
-          <input name="fullname" placeholder="Họ và tên" required />
-          <input name="phone" placeholder="Số điện thoại" required />
-        </div>
-        <div class="row">
-          <input name="guest_count" placeholder="Số lượng tham dự" required />
-          <select name="side" required>
-            <option value="Khách nhà trai">Khách nhà trai</option>
-            <option value="Khách nhà gái">Khách nhà gái</option>
-            <option value="Cả hai nhà">Cả hai nhà</option>
-          </select>
-        </div>
-        <select name="attendance" required>
-          <option value="Xác nhận tham gia">Xác nhận tham gia</option>
-          <option value="Không tham gia được">Không tham gia được</option>
-        </select>
-        <textarea name="wishes" placeholder="Lời chúc"></textarea>
-        <button class="btn" type="submit" id="submitBtn"><i class="bi bi-send"></i> Gửi</button>
-        <div id="msg" class="muted" style="margin-top:6px"></div>
-      </form>
-    </div>
-  </section>
+<section id="rsvp" style="background:#f7f7f7;padding:80px 0;">
+  <div class="container" style="max-width:600px;margin:auto;">
+    <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:32px;margin-bottom:30px;">Xác nhận tham dự</h2>
+    
+    <form style="display:flex;flex-direction:column;gap:15px;">
+      <input type="text" placeholder="Họ và tên" required style="padding:12px 15px;border:1px solid #ccc;border-radius:8px;">
+      <input type="tel" placeholder="Số điện thoại" required style="padding:12px 15px;border:1px solid #ccc;border-radius:8px;">
+      
+      <select required style="padding:12px 15px;border:1px solid #ccc;border-radius:8px;">
+        <option value="">Xác nhận tham gia</option>
+        <option value="yes">Tham gia</option>
+        <option value="no">Không tham gia</option>
+      </select>
+      
+      <textarea placeholder="Lời chúc" rows="4" style="padding:12px 15px;border:1px solid #ccc;border-radius:8px;"></textarea>
+      
+      <!-- Nút gửi Zalo -->
+      <a href="https://zalo.me/0585213213" target="_blank" 
+         style="display:block;text-align:center;background:#d63384;color:#fff;padding:14px;border-radius:30px;
+                font-size:18px;font-weight:600;text-decoration:none;">
+        <i class="bi bi-send"></i> Gửi qua Zalo
+      </a>
+    </form>
+  </div>
+</section>
 
   <!-- Gifts -->
-  <section id="gifts">
+<section id="gifts">
     <div class="container">
       <h2 class="section-title">Mừng cưới</h2>
       <div class="gift-grid">
@@ -263,109 +247,46 @@
           <div class="muted">Dương Đức Thắng • Techcombank</div>
           <div class="muted">STK: <strong>19033036669019</strong></div>
           <img src="images/qrchure.jpg" alt="QR chú rể">
-          <a class="btn" href="images/qrchure.jpg" download><i class="bi bi-download"></i> Tải QR</a>
+          <a class="btn" href="images/qrchure.jpg" download=""><i class="bi bi-download"></i> Tải QR</a>
         </div>
         <div class="gift">
           <h3>Mừng cưới cô dâu</h3>
           <div class="muted">Nguyễn Minh Tuấn • Techcombank</div>
           <div class="muted">STK: <strong>19033036669019</strong></div>
           <img src="images/qrcodau.jpg" alt="QR cô dâu">
-          <a class="btn" href="images/qrcodau.jpg" download><i class="bi bi-download"></i> Tải QR</a>
+          <a class="btn" href="images/qrcodau.jpg" download=""><i class="bi bi-download"></i> Tải QR</a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    ©2024 Designed by Thangkeky.
-  </footer>
+  <footer>©2025 Đức Thắng ❤ Minh Tuấn</footer>
 
   <!-- Audio -->
-  <audio id="bgm" preload="auto">
+  <audio id="bgm" preload="auto" loop>
     <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg" />
   </audio>
   <button class="music-btn" id="musicBtn" title="Phát/Dừng nhạc"><i class="bi bi-music-note-beamed"></i></button>
   <button class="top-btn" id="topBtn" title="Lên đầu trang"><i class="bi bi-arrow-up"></i></button>
 
   <script>
-    // ===== Mobile menu toggle =====
-    const hamb = document.getElementById('hamb');
-    const menu = document.getElementById('menu');
-    hamb.addEventListener('click', ()=> menu.classList.toggle('open'));
-
-    // ===== Smooth scroll with header offset =====
-    const header = document.querySelector('.header');
-    const links = document.querySelectorAll('[data-link]');
-    function smoothTo(id){
-      const el = document.querySelector(id);
-      if(!el) return;
-      const y = el.getBoundingClientRect().top + window.pageYOffset - header.offsetHeight - 6;
-      window.scrollTo({top:y, behavior:'smooth'});
-    }
-    links.forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const href = a.getAttribute('href');
-        if(href.startsWith('#')){ e.preventDefault(); smoothTo(href); menu.classList.remove('open'); }
-      });
-    });
-
-    // ===== Active link on scroll =====
-    const sections = ['#home','#couple','#events','#gallery','#rsvp','#gifts'].map(id=>document.querySelector(id));
-    function onScroll(){
-      const pos = window.scrollY + header.offsetHeight + 20;
-      let current = sections[0].id;
-      for(const s of sections){ if(s && pos >= s.offsetTop) current = s.id; }
-      document.querySelectorAll('.menu a').forEach(a=>{
-        a.classList.toggle('active', a.getAttribute('href') === '#'+current);
-      });
-      document.getElementById('topBtn').classList.toggle('show', window.scrollY > 600);
-    }
-    window.addEventListener('scroll', onScroll); onScroll();
-
-    // ===== Countdown (to 2025-10-20 10:30 GMT+7) =====
-    const target = new Date('2025-10-20T10:30:00+07:00').getTime();
-    const dd = document.getElementById('dd'), hh = document.getElementById('hh'), mm = document.getElementById('mm'), ss = document.getElementById('ss');
-    setInterval(()=>{
-      const now = Date.now();
-      let d = Math.max(0, target - now);
-      const days = Math.floor(d/86400000); d%=86400000;
-      const hrs = Math.floor(d/3600000); d%=3600000;
-      const mins = Math.floor(d/60000); d%=60000;
-      const secs = Math.floor(d/1000);
-      dd.textContent = String(days); hh.textContent = String(hrs); mm.textContent = String(mins); ss.textContent = String(secs);
-    },1000);
-
-    // ===== Top button =====
-    document.getElementById('topBtn').addEventListener('click', ()=> smoothTo('#home'));
-
-    // ===== Music control (autoplay may be blocked; require user gesture) =====
-    const bgm = document.getElementById('bgm');
-    const musicBtn = document.getElementById('musicBtn');
-    let playing = false;
-    function toggleMusic(){
-      if(!playing){ bgm.play().then(()=>{ playing=true; musicBtn.innerHTML='<i class="bi bi-pause-fill"></i>'; }).catch(()=>{}); }
-      else{ bgm.pause(); playing=false; musicBtn.innerHTML='<i class="bi bi-play-fill"></i>'; }
-    }
-    musicBtn.addEventListener('click', toggleMusic);
-
-    // ===== RSVP submit to Google Apps Script (replace URL) =====
-    const form = document.getElementById('rsvpForm');
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const msg = document.getElementById('msg');
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true; msg.textContent = 'Đang gửi...';
-      try{
-        const url = 'https://script.google.com/macros/s/AKfycbz_Ro9z-vc8SELF4ODta7EJJ99hRSfV9XJf4Sb2oenvaWPGq5PlYNuWBv8l7kbzAMM/exec'; // <- thay nếu bạn có URL khác
-        const body = new FormData(form);
-        const res = await fetch(url,{method:'POST', body});
-        await res.text();
-        msg.textContent = 'Cảm ơn lời chúc của bạn. Hẹn gặp bạn trong ngày vui!';
-        form.reset();
-      }catch(err){
-        console.error(err); msg.textContent = 'Có lỗi xảy ra, vui lòng thử lại!';
-      }finally{ btn.disabled = false; }
-    });
+    const hamb=document.getElementById('hamb'),menu=document.getElementById('menu');
+    hamb.addEventListener('click',()=>menu.classList.toggle('open'));
+    const header=document.querySelector('.header'),links=document.querySelectorAll('[data-link]');
+    function smoothTo(id){const el=document.querySelector(id);if(!el)return;const y=el.getBoundingClientRect().top+window.pageYOffset-header.offsetHeight-6;window.scrollTo({top:y,behavior:'smooth'});}
+    links.forEach(a=>{a.addEventListener('click',e=>{const href=a.getAttribute('href');if(href.startsWith('#')){e.preventDefault();smoothTo(href);menu.classList.remove('open');}});});
+    const sections=['#home','#couple','#events','#gallery','#rsvp','#gifts'].map(id=>document.querySelector(id));
+    function onScroll(){const pos=window.scrollY+header.offsetHeight+20;let current=sections[0].id;for(const s of sections){if(s&&pos>=s.offsetTop)current=s.id;}document.querySelectorAll('.menu a').forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});document.getElementById('topBtn').classList.toggle('show',window.scrollY>600);}
+    window.addEventListener('scroll',onScroll);onScroll();
+    const target=new Date('2025-10-20T10:30:00+07:00').getTime();
+    const dd=document.getElementById('dd'),hh=document.getElementById('hh'),mm=document.getElementById('mm'),ss=document.getElementById('ss');
+    setInterval(()=>{const now=Date.now();let d=Math.max(0,target-now);const days=Math.floor(d/86400000);d%=86400000;const hrs=Math.floor(d/3600000);d%=3600000;const mins=Math.floor(d/60000);d%=60000;const secs=Math.floor(d/1000);dd.textContent=days;hh.textContent=hrs;mm.textContent=mins;ss.textContent=secs;},1000);
+    document.getElementById('topBtn').addEventListener('click',()=>smoothTo('#home'));
+    const bgm=document.getElementById('bgm'),musicBtn=document.getElementById('musicBtn');let playing=false;
+    function toggleMusic(){if(!playing){bgm.play().then(()=>{playing=true;musicBtn.innerHTML='<i class="bi bi-pause-fill"></i>';}).catch(()=>{});}else{bgm.pause();playing=false;musicBtn.innerHTML='<i class="bi bi-play-fill"></i>';}};
+    musicBtn.addEventListener('click',toggleMusic);
+    const form=document.getElementById('rsvpForm');
+    form.addEventListener('submit',e=>{e.preventDefault();document.getElementById('submitBtn').disabled=true;document.getElementById('msg').innerText="Cảm ơn bạn đã xác nhận!";});
   </script>
 </body>
 </html>
