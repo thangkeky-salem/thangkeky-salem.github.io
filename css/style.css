@@ -734,3 +734,18 @@ footer {
   background: rgba(255,255,255,0.6); /* nền mờ để chữ dễ đọc */
   border-radius: 0 0 50% 50%;
 }
+/* Ảnh trong khối tròn */
+.card.circle {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid var(--rose);
+  margin: 0 auto; /* căn giữa */
+}
+
+.card.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ảnh phủ kín khối tròn */
+}
