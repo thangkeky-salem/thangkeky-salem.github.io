@@ -281,37 +281,13 @@
   </footer>
 
   <!-- Audio -->
-<!-- Audio -->
-<audio id="bgm" loop>
-  <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg">
-  Trình duyệt của bạn không hỗ trợ phát nhạc.
-</audio>
-<!-- Nút bật/tắt nhạc -->
-<button id="musicBtn" class="music-btn">
-  <i class="bi bi-music-note-beamed"></i>
-</button>
+  <audio id="bgm" preload="auto" loop>
+    <source src="audio/Maimaibennhau-NooPhuocThinh.mp3" type="audio/mpeg" />
+  </audio>
+  <button class="music-btn" id="musicBtn" title="Phát/Dừng nhạc"><i class="bi bi-music-note-beamed"></i></button>
+  <button class="top-btn" id="topBtn" title="Lên đầu trang"><i class="bi bi-arrow-up"></i></button>
 
-<script>
-  const bgm = document.getElementById("bgm");
-  const musicBtn = document.getElementById("musicBtn");
-  let playing = false;
-
-  function toggleMusic(){
-    if(!playing){
-      bgm.play().then(()=>{
-        playing = true;
-        musicBtn.innerHTML = '<i class="bi bi-pause-circle"></i>';
-      }).catch(err=>{
-        console.log("Không phát được nhạc:", err);
-      });
-    } else {
-      bgm.pause();
-      playing = false;
-      musicBtn.innerHTML = '<i class="bi bi-music-note-beamed"></i>';
-    }
-  }
-  musicBtn.addEventListener("click", toggleMusic);
-</script>
+  <script>
     // ===== Mobile menu toggle =====
     const hamb = document.getElementById('hamb');
     const menu = document.getElementById('menu');
